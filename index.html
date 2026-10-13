@@ -58,9 +58,15 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 .rp-opt .go{color:var(--mw-muted-text)}
 .share-bottom{max-width:1120px;margin:32px auto 0;padding:0 18px;text-align:center}.report p strong{font-family:var(--mw-font-heading);font-size:17px}.report p+ul{margin-top:0}
 @media(min-width:1100px){.wrap{max-width:1360px}.board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px;align-items:start}
-.board .cw{grid-column:1/3;grid-row:1/3}.board .dec{grid-column:3;grid-row:1}.board .rw{grid-column:3;grid-row:2}.board section{margin-top:30px}
+.board .cw{grid-column:1/3;grid-row:1/3}.board .dec{grid-column:3;grid-row:1}.board .rw{grid-column:3;grid-row:1}.board section{margin-top:30px}
 .board .grid{grid-template-columns:1fr 1fr}.cw .feature{margin:0!important;display:flex;flex-direction:column}
 .card p,ul.list li,.report li,.report p{font-size:16px}footer{padding-left:5vw;padding-right:5vw}}
+.attn{margin:14px 0 0;max-width:560px}
+.attn-btn{width:100%;min-height:52px;display:flex;align-items:center;gap:12px;padding:8px 14px;border:2px solid #b45309;border-radius:.75rem;background:#fffbeb;color:#7c2d12;font:600 16px var(--mw-font-body);cursor:pointer;text-align:left}
+.attn-btn:focus-visible{outline:3px solid #b45309;outline-offset:2px}.attn-btn .t{flex:1}
+.attn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.attn-btn .chev{transition:transform var(--mw-dur) var(--mw-ease)}.attn-btn[aria-expanded=true]{border-bottom-left-radius:0;border-bottom-right-radius:0}.attn-btn[aria-expanded=true] .chev{transform:rotate(180deg)}
+.attn-panel{border:1px solid var(--mw-border);border-top:0;border-radius:0 0 .75rem .75rem;padding:4px 14px;background:#fff}.attn-panel[hidden]{display:none}.attn-panel ul.list{border-top:0}.attn-panel li:last-child{border-bottom:0}
 .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#fff;color:var(--mw-primary);border:1px solid var(--mw-border);box-shadow:0 4px 14px rgba(10,10,10,.12);padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s}.toast.on{opacity:1}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><defs>
@@ -78,20 +84,19 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 <div class="wrap">
 <header><span class="word" style="text-transform:uppercase">Max Weberman</span><button id="share" type="button" class="btn mw-hover share"><svg><use href="#i-share"/></svg>Share</button></header>
 <div class="report" id="report" aria-live="polite"><div class="lbl">Morning Report · Oct 13</div>
-<p><strong>Waiting On Max</strong></p><ul><li>SmartKeep V.2 is live. Final OK needed for the app swap (customer-facing, so any change needs Max's OK).</li></ul>
 <p><strong>Live</strong></p><ul><li>Recent Projects dropdown.</li></ul>
 <p><strong>In Progress</strong></p><ul><li>Shorts photo enhancement.</li></ul>
 <p><strong>Paused</strong></p><ul><li>Sep 30 time-lapse edit, until Max asks.</li></ul></div>
+<div class="attn" id="attn"><button type="button" class="attn-btn mw-hover" id="attn-btn" aria-expanded="false" aria-controls="attn-panel"><svg><use href="#i-flag"/></svg><span class="t">1 Decision Waiting</span><svg class="chev"><use href="#i-chev"/></svg></button>
+<div class="attn-panel" id="attn-panel" hidden><ul class="list"><li><svg><use href="#i-flag"/></svg><div><strong>SmartKeep V.2: Final OK For App Swap</strong><br><span class="muted">V.2 is live on the explainer site. Once Max approves, it replaces V.1 in the app. Customer-facing, so any change needs his OK.</span></div></li></ul></div></div>
 <div class="rp" id="rp"><span class="rp-lbl" id="rp-lbl">Recent Projects</span>
 <button class="rp-btn mw-hover" id="rp-btn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="rp-lbl rp-btn"><svg><use href="#i-play"/></svg><span class="t">Choose A Project To Open</span><svg class="chev"><use href="#i-chev"/></svg></button>
 <ul class="rp-list" id="rp-list" role="listbox" aria-labelledby="rp-lbl" hidden></ul></div>
 <h1>Video And Photo Agent</h1>
 <p class="lead muted">Larger Video And Photo Pieces, Like 45-Second Explainers, Edits And Photo Enhancement.</p>
-<div class="status"><span class="pill"><span class="dot"></span>Active</span><span class="pill"><span class="dot o"></span>1 Decision Owed</span><span class="pill"><span class="dot o"></span>1 Paused</span><span class="pill">Updated Oct 13, 2026</span></div>
+<div class="status"><span class="pill"><span class="dot"></span>Active</span><span class="pill"><span class="dot o"></span>1 Decision Waiting</span><span class="pill"><span class="dot o"></span>1 Paused</span><span class="pill">Updated Oct 13, 2026</span></div>
 
 <div class="board">
-<section class="dec"><h2>Decisions Max Owes</h2>
-<ul class="list"><li><svg><use href="#i-flag"/></svg><div><strong>SmartKeep V.2: Final OK For App Swap</strong><br><span class="muted">V.2 is live on the explainer site. Once approved, it replaces V.1 in the app.</span></div></li></ul></section>
 
 <section class="cw"><h2>Current Work</h2>
 <div class="grid">
@@ -117,6 +122,9 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 <script>
 const doShare=async()=>{const d={title:document.title,url:location.href};
 try{if(navigator.share){await navigator.share(d)}else{await navigator.clipboard.writeText(location.href);const t=document.getElementById('toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),1600)}}catch(e){}};document.querySelectorAll('.share').forEach(b=>b.onclick=doShare);
+const ab=document.getElementById('attn-btn'),ap=document.getElementById('attn-panel');
+const toggleAttn=()=>{const o=ab.getAttribute('aria-expanded')==='true';ab.setAttribute('aria-expanded',String(!o));ap.hidden=o};
+ab.onclick=toggleAttn;
 </script><script>
 (function(){const btn=document.getElementById('rp-btn'),list=document.getElementById('rp-list');let opts=[],idx=0;
 const fmt=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
