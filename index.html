@@ -83,10 +83,9 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 </defs></svg>
 <div class="wrap">
 <header><a class="apps-home mw-hover" href="https://webermanapps.github.io/a-2sipntzsp385oxy3/" style="display:inline-flex;align-items:center;gap:6px;min-height:44px;min-width:44px;color:inherit;text-decoration:none;font-weight:600"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Apps Home</a><button id="share" type="button" class="btn mw-hover share"><svg><use href="#i-share"/></svg>Share</button></header>
-<div class="report" id="report" aria-live="polite"><div class="lbl">Morning Report · Oct 13</div>
-<p><strong>Live</strong></p><ul><li>Recent Projects dropdown.</li></ul>
-<p><strong>In Progress</strong></p><ul><li>Shorts photo enhancement.</li></ul>
-<p><strong>Paused</strong></p><ul><li>Sep 30 time-lapse edit, until Max asks.</li></ul></div>
+<div class="report" id="report" aria-live="polite"><div class="lbl">Evening Report · Oct 13</div>
+<p><strong>Today</strong></p><ul><li>SmartKeep V.2 updated on the explainer site: white background, the new van, a $99 plan card, and no byline.</li><li>Upkeep video files combined into one home, with old drafts archived and nothing deleted.</li><li>This dashboard launched with Recent Projects, a big-screen layout, an Apps Home link and pull-to-refresh.</li></ul>
+<p><strong>Tomorrow</strong></p><ul><li>SmartKeep V.2 waits on Max's OK before it replaces V.1 in the app.</li><li>Max's new Smart Upkeep picks for the tech polo, headshots and van are saved for the next video.</li><li>Shorts photo enhancement on call. Sep 30 time-lapse edit stays paused.</li></ul></div>
 <div class="attn" id="attn"><button type="button" class="attn-btn mw-hover" id="attn-btn" aria-expanded="false" aria-controls="attn-panel"><svg><use href="#i-flag"/></svg><span class="t">1 Decision Waiting</span><svg class="chev"><use href="#i-chev"/></svg></button>
 <div class="attn-panel" id="attn-panel" hidden><ul class="list"><li><svg><use href="#i-flag"/></svg><div><strong>SmartKeep V.2: Final OK For App Swap</strong><br><span class="muted">V.2 is live on the explainer site. Once Max approves, it replaces V.1 in the app. Customer-facing, so any change needs his OK.</span></div></li></ul></div></div>
 <div class="rp" id="rp"><span class="rp-lbl" id="rp-lbl">Recent Projects</span>
@@ -144,5 +143,5 @@ else if(k==='Home'){e.preventDefault();setAct(0)}else if(k==='End'){e.preventDef
 else if(k==='Enter'||k===' '){e.preventDefault();opts[idx].click()}else if(k==='Escape'||k==='Tab'){close(k==='Escape')}};
 document.addEventListener('click',e=>{if(!document.getElementById('rp').contains(e.target))close()});
 fetch('projects.json',{cache:'no-store'}).then(r=>r.json()).then(render).catch(()=>{btn.querySelector('.t').textContent='Projects Unavailable, Reload To Retry';btn.disabled=true});})();
-</script><script src="ptr.js" defer></script>
+</script><script src="ptr.js?v=3" defer></script>
 </body></html>
