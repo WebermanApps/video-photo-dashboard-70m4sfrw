@@ -68,6 +68,10 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 .attn-btn .chev{transition:transform var(--mw-dur) var(--mw-ease)}.attn-btn[aria-expanded=true]{border-bottom-left-radius:0;border-bottom-right-radius:0}.attn-btn[aria-expanded=true] .chev{transform:rotate(180deg)}
 .attn-panel{border:1px solid var(--mw-border);border-top:0;border-radius:0 0 .75rem .75rem;padding:4px 14px;background:#fff}.attn-panel[hidden]{display:none}.attn-panel ul.list{border-top:0}.attn-panel li:last-child{border-bottom:0}
 .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#fff;color:var(--mw-primary);border:1px solid var(--mw-border);box-shadow:0 4px 14px rgba(10,10,10,.12);padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s}.toast.on{opacity:1}
+
+.feature .vwrap{display:flex;justify-content:center;background:var(--mw-secondary);border-bottom:1px solid var(--mw-border);padding:16px 12px}
+.feature video.portrait{display:block;width:min(100%,280px);aspect-ratio:9/16;object-fit:contain;background:#0a0a0a;border-radius:.6rem;box-shadow:0 4px 14px rgba(10,10,10,.12)}
+.feature .body .desc{font-size:15px;margin:2px 0 12px;color:var(--mw-muted-text)}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><defs>
 <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></symbol>
@@ -83,8 +87,8 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 </defs></svg>
 <div class="wrap">
 <header><a class="apps-home mw-hover" href="https://webermanapps.github.io/a-2sipntzsp385oxy3/" style="display:inline-flex;align-items:center;gap:6px;min-height:44px;min-width:44px;color:inherit;text-decoration:none;font-weight:600"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Apps Home</a><button id="share" type="button" class="btn mw-hover share"><svg><use href="#i-share"/></svg>Share</button></header>
-<div class="report" id="report" aria-live="polite"><div class="lbl">Fresh Start · Oct 13, 7:21 PM</div>
-<p><strong>Ready for Max</strong></p><ul><li>SmartKeep V.2, 45 seconds on a white background with the new van and the $99 card. Open it from Recent Projects.</li><li>Shorts photo enhancement, ready for any photo you send.</li><li>New Smart Upkeep picks (polo, headshots, van) are saved for the next video.</li></ul>
+<div class="report" id="report" aria-live="polite"><div class="lbl">SmartKeep V.3 · Oct 13, 8:21 PM</div>
+<p><strong>V.3 Live On This Dashboard</strong></p><ul><li>SmartKeep V.3, 30 seconds: problem, real app with Your Price count-up, $99/Month membership close. Play it below or open from Recent Projects.</li><li>9:16 and 16:9 both published under videos/v3/.</li><li>Shorts photo enhancement, ready for any photo you send.</li></ul>
 </div>
 <div class="attn" id="attn"><button type="button" class="attn-btn mw-hover" id="attn-btn" aria-expanded="false" aria-controls="attn-panel"><svg><use href="#i-flag"/></svg><span class="t">1 Decision Waiting</span><svg class="chev"><use href="#i-chev"/></svg></button>
 <div class="attn-panel" id="attn-panel" hidden><ul class="list"><li><svg><use href="#i-flag"/></svg><div><strong>SmartKeep V.2: Final OK For App Swap</strong><br><span class="muted">V.2 is live on the explainer site. Once Max approves, it replaces V.1 in the app. Customer-facing, so any change needs his OK.</span></div></li></ul></div></div>
@@ -97,11 +101,18 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 
 <div class="board">
 
-<section class="cw"><h2>Current Work</h2>
+<section class="cw" id="smartkeep-v3"><h2>Current Work</h2>
 <div class="grid">
-<div class="feature mw-hover"><img src="img/smartkeep-v2-keyframe.png" alt="SmartKeep V.2 Keyframe">
-<div class="body"><h3>SmartKeep V.2 Explainer</h3><p class="muted" style="margin:2px 0 12px">Live. Awaiting Max's Final OK For The App Swap.</p>
-<div class="links"><a class="btn mw-hover" href="https://webermanapps.github.io/smartkeep-explainer/v2/" target="_blank" rel="noopener"><svg><use href="#i-link"/></svg>Open V.2</a></div></div></div>
+<div class="feature mw-hover">
+<div class="vwrap"><video class="portrait" controls playsinline preload="metadata" poster="img/smartkeep-v3-keyframe.png" aria-label="SmartKeep V.3 9:16">
+<source src="videos/v3/SmartKeep_V3_9x16.mp4" type="video/mp4">
+</video></div>
+<div class="body"><h3>SmartKeep V.3</h3><p class="desc">30s: problem, real app with Your Price count-up, $99/Month membership close.</p>
+<div class="links">
+<a class="btn mw-hover" href="videos/v3/SmartKeep_V3_9x16.mp4" target="_blank" rel="noopener"><svg><use href="#i-video"/></svg>9:16</a>
+<a class="btn mw-hover" href="videos/v3/SmartKeep_V3_16x9.mp4" target="_blank" rel="noopener"><svg><use href="#i-video"/></svg>16:9</a>
+</div></div></div>
+<div class="card mw-hover"><div class="ic"><svg><use href="#i-video"/></svg></div><div><h3>SmartKeep V.2 Explainer</h3><p class="muted">Live on the explainer site. Awaiting Max's Final OK For The App Swap.</p><a class="btn mw-hover" href="https://webermanapps.github.io/smartkeep-explainer/v2/" target="_blank" rel="noopener"><svg><use href="#i-link"/></svg>Open V.2</a></div></div>
 <div class="card mw-hover"><div class="ic"><svg><use href="#i-video"/></svg></div><div><h3>SmartKeep V.1 Explainer</h3><p class="muted">Current Version In The App Until V.2 Is Approved.</p><a class="btn mw-hover" href="https://webermanapps.github.io/smartkeep-explainer/" target="_blank" rel="noopener"><svg><use href="#i-link"/></svg>Open V.1</a></div></div>
 <div class="card mw-hover"><div class="ic"><svg><use href="#i-photo"/></svg></div><div><h3>Shorts Photo Enhance</h3><p class="muted">Ongoing Photo Enhancement For Shorts.</p></div></div>
 <div class="card mw-hover"><div class="ic"><svg><use href="#i-pause"/></svg></div><div><h3>Sep 30 Time-Lapse Edit</h3><p class="muted">Paused. Ready To Resume When Max Asks.</p></div></div>
@@ -109,6 +120,7 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 
 <section class="rw"><h2>Recent Work</h2>
 <ul class="list">
+<li><svg><use href="#i-video"/></svg><div><strong>SmartKeep V.3 Published</strong><br><span class="muted">30s promo with 9:16 player on this dashboard. Oct 13.</span></div></li>
 <li><svg><use href="#i-folder"/></svg><div><strong>Upkeep Video Archive Moved</strong><br><span class="muted">Old sources now live in the ops archive. All existing links still work. Oct 13.</span></div></li>
 <li><svg><use href="#i-check"/></svg><div><strong>Upkeep Video Files Consolidated</strong><br><span class="muted">V.1, V.2 and the v3 build in one home. Nothing deleted. Oct 13.</span></div></li>
 <li><svg><use href="#i-video"/></svg><div><strong>SmartKeep V.2 Published To The Explainer Site</strong><br><span class="muted">Live at the V.2 link above.</span></div></li>
