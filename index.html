@@ -41,6 +41,21 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 @media(min-width:1800px){.wrap{max-width:1600px}.grid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:3000px){body{zoom:2}.wrap{padding:3vh 2.5vw}}
 @media(min-width:1800px){.feature{display:grid;grid-template-columns:1.4fr 1fr}.feature img{border-bottom:0;border-right:1px solid var(--mw-border);height:100%}}
+.rp{position:relative;margin:14px 0 0;max-width:560px}
+.rp-lbl{display:block;font:600 12px var(--mw-font-body);text-transform:uppercase;letter-spacing:var(--mw-tracking-label);color:var(--mw-muted-text);margin:0 0 6px}
+.rp-btn{width:100%;min-height:52px;display:flex;align-items:center;gap:12px;padding:8px 14px;border:2px solid var(--mw-primary);border-radius:.75rem;background:#fff;color:var(--mw-primary);font:600 16px var(--mw-font-body);cursor:pointer;text-align:left}
+.rp-btn .t{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rp svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.rp-btn .chev{transition:transform var(--mw-dur) var(--mw-ease)}.rp-btn[aria-expanded=true] .chev{transform:rotate(180deg)}
+.rp-list{list-style:none;margin:6px 0 0;padding:6px;position:absolute;left:0;right:0;top:100%;z-index:20;background:#fff;border:1px solid var(--mw-border);border-radius:.75rem;box-shadow:0 12px 32px rgba(10,10,10,.14);max-height:60vh;overflow:auto}
+.rp-list[hidden]{display:none}
+.rp-opt{display:flex;align-items:center;gap:12px;min-height:56px;padding:6px 8px;border-radius:.6rem;cursor:pointer;outline:none}
+.rp-opt:hover,.rp-opt.act{background:var(--mw-secondary)}
+.rp-opt:focus-visible{box-shadow:0 0 0 2px var(--mw-primary)}
+.rp-th{flex:none;width:64px;height:36px;border-radius:6px;object-fit:cover;background:var(--mw-secondary);border:1px solid var(--mw-border);display:grid;place-items:center;color:var(--mw-muted-text)}
+.rp-tx{flex:1;min-width:0}.rp-tx b{display:block;font-family:var(--mw-font-heading);font-size:19px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rp-tx span{font-size:13px;color:var(--mw-muted-text)}
+.rp-opt .go{color:var(--mw-muted-text)}
 .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--mw-primary);color:#fff;padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s}.toast.on{opacity:1}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><defs>
@@ -52,12 +67,17 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></symbol>
 <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
 <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+<symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5.5 3.5-5.5 3.5z"/></symbol>
 </defs></svg>
 <div class="wrap">
 <header><span class="word">MAX WEBERMAN</span><button class="btn mw-hover" id="share"><svg><use href="#i-share"/></svg>Share</button></header>
 <div class="report" id="report" aria-live="polite"><div class="lbl">Evening Report · Oct 13</div>
 <ul><li>SmartKeep V.2 updated and published; byline removed.</li><li>Upkeep video files consolidated and archived (nothing deleted).</li></ul>
 <p class="muted">Tomorrow: SmartKeep V.2 app swap once Max gives the final OK.</p></div>
+<div class="rp" id="rp"><span class="rp-lbl" id="rp-lbl">Recent Projects</span>
+<button class="rp-btn mw-hover" id="rp-btn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="rp-lbl rp-btn"><svg><use href="#i-play"/></svg><span class="t">Choose A Project To Open</span><svg class="chev"><use href="#i-chev"/></svg></button>
+<ul class="rp-list" id="rp-list" role="listbox" aria-labelledby="rp-lbl" hidden></ul></div>
 <h1>Video And Photo Agent</h1>
 <p class="lead muted">Larger Video And Photo Pieces, Like 45-Second Explainers, Edits And Photo Enhancement.</p>
 <div class="status"><span class="pill"><span class="dot"></span>Active</span><span class="pill"><span class="dot o"></span>1 Decision Owed</span><span class="pill"><span class="dot o"></span>1 Paused</span><span class="pill">Updated Oct 13, 2026</span></div>
@@ -87,4 +107,24 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 <script>
 document.getElementById('share').onclick=async()=>{const d={title:document.title,url:location.href};
 try{if(navigator.share){await navigator.share(d)}else{await navigator.clipboard.writeText(location.href);const t=document.getElementById('toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),1600)}}catch(e){}};
+</script><script>
+(function(){const btn=document.getElementById('rp-btn'),list=document.getElementById('rp-list');let opts=[],idx=0;
+const FALLBACK=[{"title":"SmartKeep V.2","date":"2026-10-13","type":"video","link":"https://webermanapps.github.io/smartkeep-explainer/v2/","thumbnail":"img/smartkeep-v2-keyframe.png"},{"title":"SmartKeep V.1","date":"2026-10-12","type":"video","link":"https://webermanapps.github.io/smartkeep-explainer/","thumbnail":""}];
+const fmt=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+function render(items){items.sort((a,b)=>b.date.localeCompare(a.date));list.innerHTML='';
+items.forEach((p,i)=>{const li=document.createElement('li');li.className='rp-opt mw-hover';li.role='option';li.id='rp-o'+i;li.tabIndex=-1;
+const th=p.thumbnail?'<img class="rp-th" alt="" src="'+p.thumbnail+'">':'<span class="rp-th"><svg><use href="#i-'+(p.type==='photo'?'photo':'video')+'"/></svg></span>';
+li.innerHTML=th+'<span class="rp-tx"><b></b><span>'+(p.type==='photo'?'Photo':'Video')+' · '+fmt(p.date)+'</span></span><svg class="go"><use href="#i-link"/></svg>';
+li.querySelector('b').textContent=p.title;li.onclick=()=>pick(p);list.appendChild(li)});opts=[...list.children]}
+function pick(p){close();window.open(p.link,'_blank','noopener')}
+function setAct(i){idx=(i+opts.length)%opts.length;opts.forEach((o,j)=>o.classList.toggle('act',j===idx));opts[idx].focus()}
+function open(){list.hidden=false;btn.setAttribute('aria-expanded','true');setAct(0)}
+function close(f){list.hidden=true;btn.setAttribute('aria-expanded','false');opts.forEach(o=>o.classList.remove('act'));if(f)btn.focus()}
+btn.onclick=()=>list.hidden?open():close();
+btn.onkeydown=e=>{if(['ArrowDown','ArrowUp'].includes(e.key)){e.preventDefault();open();if(e.key==='ArrowUp')setAct(-1)}};
+list.onkeydown=e=>{const k=e.key;if(k==='ArrowDown'){e.preventDefault();setAct(idx+1)}else if(k==='ArrowUp'){e.preventDefault();setAct(idx-1)}
+else if(k==='Home'){e.preventDefault();setAct(0)}else if(k==='End'){e.preventDefault();setAct(-1)}
+else if(k==='Enter'||k===' '){e.preventDefault();opts[idx].click()}else if(k==='Escape'||k==='Tab'){close(k==='Escape')}};
+document.addEventListener('click',e=>{if(!document.getElementById('rp').contains(e.target))close()});
+fetch('projects.json',{cache:'no-store'}).then(r=>r.json()).then(render).catch(()=>render(FALLBACK));})();
 </script></body></html>
