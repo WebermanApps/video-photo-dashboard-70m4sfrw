@@ -144,4 +144,5 @@ else if(k==='Home'){e.preventDefault();setAct(0)}else if(k==='End'){e.preventDef
 else if(k==='Enter'||k===' '){e.preventDefault();opts[idx].click()}else if(k==='Escape'||k==='Tab'){close(k==='Escape')}};
 document.addEventListener('click',e=>{if(!document.getElementById('rp').contains(e.target))close()});
 fetch('projects.json',{cache:'no-store'}).then(r=>r.json()).then(render).catch(()=>{btn.querySelector('.t').textContent='Projects Unavailable, Reload To Retry';btn.disabled=true});})();
-</script></body></html>
+</script><script src="ptr.js" defer></script>
+</body></html>
