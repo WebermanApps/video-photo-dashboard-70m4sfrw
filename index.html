@@ -125,6 +125,40 @@ footer{margin-top:36px;background:var(--mw-secondary);color:var(--mw-foreground)
   h1{font-size:34px}
   .btn{padding:10px 12px;font-size:11px}
 }
+
+/* Coach layout round 1 */
+.topbar{position:sticky;top:0;z-index:40;background:var(--mw-background,#fff);display:flex;align-items:center;gap:10px;padding:4px 0;border-bottom:1px solid var(--lines);min-width:0}
+.topbar .nm{font:700 18px var(--mw-font-heading);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}
+.topbar .upd{font:600 11px var(--mw-font-body);color:var(--muted);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+@media(max-width:480px){.topbar .upd{display:none}.topbar .share{padding:8px 10px}}
+h1{margin:12px 0 4px}.lead{margin:0 0 10px}section{margin-top:18px}
+.apps{display:flex;gap:8px;overflow-x:auto;margin:0 0 4px;padding:2px 0 6px;min-width:0}
+.app{flex:1 0 150px;display:flex;align-items:center;gap:8px;min-height:48px;padding:6px 10px;border:1px solid #05668D33;border-left:4px solid var(--lagoon);background:#05668D0d;color:inherit;text-decoration:none;min-width:0}
+.app svg{width:20px;height:20px;stroke:var(--lagoon);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.app b{font:700 16px var(--mw-font-heading);line-height:1.1;display:block}.app small{font-size:12px;color:var(--muted)}
+.report{padding:0 14px;margin-top:10px}
+.report>summary{list-style:none;cursor:pointer;min-height:52px;display:flex;align-items:center;gap:10px;font:600 15px var(--mw-font-body);min-width:0}
+.report>summary::-webkit-details-marker{display:none}
+.report>summary .t{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.report>summary b{font-family:var(--mw-font-heading);font-size:18px}
+.report>summary svg{width:18px;height:18px;stroke:var(--lagoon);fill:none;stroke-width:2;flex:none;transition:transform .2s}
+.report[open]>summary svg{transform:rotate(180deg)}.report[open]{padding-bottom:14px}
+.attn{margin-top:10px}
+.stats{display:flex;gap:8px;overflow-x:auto;margin:12px 0 0;min-width:0}
+.stat{flex:1 0 110px;border:1px solid var(--lines);border-top:3px solid var(--lagoon);background:#fff;padding:8px 10px;min-width:0}
+.stat b{display:block;font:700 22px/1 var(--mw-font-heading)}.stat span{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.card p.muted,.feature .desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
+.card p.muted.full,.feature .desc.full{-webkit-line-clamp:unset;display:block}
+.card{padding:12px}.grid{gap:10px}
+.feed details{width:100%;min-width:0}.feed details summary{list-style:none;cursor:pointer;display:flex;gap:10px;align-items:center;min-height:36px;min-width:0}
+.feed details summary::-webkit-details-marker{display:none}
+.feed details summary strong{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.feed .dt{margin-left:auto;flex:none;font-size:12px;color:var(--muted);white-space:nowrap}
+.feed ul.list li{padding:6px 0;align-items:center}
+.feed ul.list li.more{display:none}.feed.all ul.list li.more{display:flex}
+.seeall{background:none;border:0;color:var(--lagoon);font:600 13px var(--mw-font-body);min-height:44px;cursor:pointer;padding:0}
+@media(max-width:600px){.app{flex:1 1 0;padding:6px;gap:6px}.app svg{display:none}.app b{font-size:14px}.app small{font-size:11px}.stat{flex:1 1 0;padding:6px 8px}.stat b{font-size:18px}.stat span{font-size:10px;letter-spacing:.06em}}
+.ptr-cue{margin-top:18px}footer{margin-top:24px}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><defs>
 <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></symbol>
@@ -141,13 +175,21 @@ footer{margin-top:36px;background:var(--mw-secondary);color:var(--mw-foreground)
 <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" fill="none"/><rect x="13" y="4" width="7" height="7" fill="none"/><rect x="4" y="13" width="7" height="7" fill="none"/><rect x="13" y="13" width="7" height="7" fill="none"/></symbol>
 </defs></svg>
 <div class="wrap">
-<header>
+<header class="topbar">
 <a class="apps-home mw-hover" href="https://webermanapps.github.io/a-2sipntzsp385oxy3/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Apps Home</a>
+<span class="nm">Video &amp; Photo</span><span class="upd">Updated Oct 13, 11:45 PM ICT</span>
 <button id="share" type="button" class="btn mw-hover share"><svg><use href="#i-share"/></svg>Share</button>
 </header>
 
-<section class="report evening" id="report" aria-live="polite">
-<h2 class="fst">SmartKeep V3</h2>
+<h1>Video &amp; Photo</h1>
+<p class="lead muted">Larger Video And Photo Pieces, Like 45-Second Explainers, Edits And Photo Enhancement.</p>
+<nav class="apps" aria-label="My Apps">
+<a class="app mw-hover" href="https://webermanapps.github.io/smartkeep-explainer/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#i-video"/></svg><span><b>SmartKeep V.1</b><small>Explainer</small></span></a>
+<a class="app mw-hover" href="https://webermanapps.github.io/smartkeep-explainer/v2/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#i-video"/></svg><span><b>SmartKeep V.2</b><small>Explainer</small></span></a>
+<a class="app mw-hover" href="http://smartupkeep.ai/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#i-home"/></svg><span><b>Smart Upkeep</b><small>App · V3 landing video</small></span></a>
+</nav>
+<details class="report evening" id="report">
+<summary><span class="t"><b>Evening Report</b> · SmartKeep V3 official, drafts removed · 2 open</span><svg viewBox="0 0 24 24"><use href="#i-chev"/></svg></summary>
 <p class="when">Evening Report · Oct 13, 2026, 11:13 PM ICT</p>
 <div class="fst-tiles">
 <a class="fst-tile mw-hover" href="#smartkeep-v3"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg><b>Play V3</b><span>Official 45s cut</span></a>
@@ -170,7 +212,7 @@ footer{margin-top:36px;background:var(--mw-secondary);color:var(--mw-foreground)
 <li><span class="num">2</span><svg class="ric" viewBox="0 0 24 24"><use href="#i-pause"/></svg><span>Sep 30 time-lapse edit paused until Max asks.</span></li>
 </ol>
 </details>
-</section>
+</details>
 
 <div class="attn" id="attn"><button type="button" class="attn-btn mw-hover" id="attn-btn" aria-expanded="false" aria-controls="attn-panel"><svg><use href="#i-flag"/></svg><span class="t">1 Decision Waiting</span><svg class="chev"><use href="#i-chev"/></svg></button>
 <div class="attn-panel" id="attn-panel" hidden>
@@ -181,12 +223,7 @@ footer{margin-top:36px;background:var(--mw-secondary);color:var(--mw-foreground)
 <button class="rp-btn mw-hover" id="rp-btn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="rp-lbl rp-btn"><svg><use href="#i-play"/></svg><span class="t">Choose A Project To Open</span><svg class="chev"><use href="#i-chev"/></svg></button>
 <ul class="rp-list" id="rp-list" role="listbox" aria-labelledby="rp-lbl" hidden></ul></div>
 
-<h1>Video And Photo Agent</h1>
-<p class="lead muted">Larger Video And Photo Pieces, Like 45-Second Explainers, Edits And Photo Enhancement.</p>
-<div class="status-band">
-<div class="status"><span class="pill"><span class="dot"></span>Active</span><span class="pill"><span class="dot o"></span>1 Decision Waiting</span><span class="pill"><span class="dot o"></span>1 Paused</span><span class="pill">Updated Oct 13, 2026</span></div>
-<div class="status-links"><a class="mw-hover" href="#attn">Decisions</a><a class="mw-hover" href="#smartkeep-v3">Current Work</a></div>
-</div>
+<div class="stats"><div class="stat"><b>1</b><span>Active</span></div><div class="stat"><b>1</b><span>Decision</span></div><div class="stat"><b>1</b><span>Paused</span></div><div class="stat"><b>Oct 13</b><span>Updated</span></div></div>
 
 <div class="board">
 
@@ -210,11 +247,11 @@ footer{margin-top:36px;background:var(--mw-secondary);color:var(--mw-foreground)
 <section class="rw"><div class="feed">
 <h2>Recent Work</h2>
 <ul class="list">
-<li><svg><use href="#i-check"/></svg><div><strong>SmartKeep V3 Official — Drafts Removed</strong><br><span class="muted">V3.4 approved as official SmartKeep V3. Draft V3.1 / V3.2 mp4s deleted from this dashboard. Oct 13.</span></div></li>
-<li><svg><use href="#i-video"/></svg><div><strong>SmartKeep V3.4 Published</strong><br><span class="muted">45s with characters, slower quote flow, logo. Now the official V3. Oct 13.</span></div></li>
-<li><svg><use href="#i-folder"/></svg><div><strong>Upkeep Video Archive Moved</strong><br><span class="muted">Old sources now live in the ops archive. All existing links still work. Oct 13.</span></div></li>
-<li><svg><use href="#i-check"/></svg><div><strong>Upkeep Video Files Consolidated</strong><br><span class="muted">V.1, V.2 and the v3 build in one home. Nothing deleted. Oct 13.</span></div></li>
-<li><svg><use href="#i-video"/></svg><div><strong>SmartKeep V.2 Published To The Explainer Site</strong><br><span class="muted">Live at the V.2 link above.</span></div></li>
+<li><details><summary><svg><use href="#i-check"/></svg><strong>SmartKeep V3 Official — Drafts Removed</strong><span class="dt">Oct 13</span></summary><span class="muted">V3.4 approved as official SmartKeep V3. Draft V3.1 / V3.2 mp4s deleted from this dashboard. Oct 13.</span></details></li>
+<li><details><summary><svg><use href="#i-video"/></svg><strong>SmartKeep V3.4 Published</strong><span class="dt">Oct 13</span></summary><span class="muted">45s with characters, slower quote flow, logo. Now the official V3. Oct 13.</span></details></li>
+<li><details><summary><svg><use href="#i-folder"/></svg><strong>Upkeep Video Archive Moved</strong><span class="dt">Oct 13</span></summary><span class="muted">Old sources now live in the ops archive. All existing links still work. Oct 13.</span></details></li>
+<li><details><summary><svg><use href="#i-check"/></svg><strong>Upkeep Video Files Consolidated</strong><span class="dt">Oct 13</span></summary><span class="muted">V.1, V.2 and the v3 build in one home. Nothing deleted. Oct 13.</span></details></li>
+<li><details><summary><svg><use href="#i-video"/></svg><strong>SmartKeep V.2 Published To The Explainer Site</strong><span class="dt">Oct 13</span></summary><span class="muted">Live at the V.2 link above.</span></details></li>
 </ul>
 <div class="txtlinks">
 <a class="mw-hover" href="#smartkeep-v3">Open V3 Player</a>
@@ -247,6 +284,8 @@ try{if(navigator.share){await navigator.share(d)}else{await navigator.clipboard.
 const ab=document.getElementById('attn-btn'),ap=document.getElementById('attn-panel');
 const toggleAttn=()=>{const o=ab.getAttribute('aria-expanded')==='true';ab.setAttribute('aria-expanded',String(!o));ap.hidden=o};
 ab.onclick=toggleAttn;
+document.querySelectorAll('.card p.muted,.feature .desc').forEach(p=>p.onclick=()=>p.classList.toggle('full'));
+document.querySelectorAll('.feed').forEach(f=>{const li=f.querySelectorAll('ul.list>li');if(li.length>5){li.forEach((l,i)=>i>=5&&l.classList.add('more'));const b=document.createElement('button');b.className='seeall';b.textContent='See All ('+li.length+')';b.onclick=()=>{f.classList.toggle('all');b.textContent=f.classList.contains('all')?'Show Less':'See All ('+li.length+')'};f.querySelector('ul.list').after(b)}});
 </script><script>
 (function(){const btn=document.getElementById('rp-btn'),list=document.getElementById('rp-list');let opts=[],idx=0;
 const fmt=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
