@@ -1,24 +1,40 @@
 [
   {
-    "title": "SmartKeep V.3 (45s)",
+    "title": "SmartKeep V3.4",
+    "date": "2026-10-13",
+    "type": "video",
+    "link": "https://webermanapps.github.io/video-photo-dashboard-70m4sfrw/videos/v3/SmartKeep_V3.4_9x16.mp4",
+    "link_16x9": "https://webermanapps.github.io/video-photo-dashboard-70m4sfrw/videos/v3/SmartKeep_V3.4_16x9.mp4",
+    "description": "45s, characters, slower quote flow, logo",
+    "thumbnail": "img/smartkeep-v3.4-keyframe.png"
+  },
+  {
+    "title": "SmartKeep V3.2",
     "date": "2026-10-13",
     "type": "video",
     "link": "https://webermanapps.github.io/video-photo-dashboard-70m4sfrw/videos/v3/SmartKeep_V3_45_9x16.mp4",
     "link_16x9": "https://webermanapps.github.io/video-photo-dashboard-70m4sfrw/videos/v3/SmartKeep_V3_45_16x9.mp4",
-    "link_30_9x16": "https://webermanapps.github.io/video-photo-dashboard-70m4sfrw/videos/v3/SmartKeep_V3_9x16.mp4",
-    "link_30_16x9": "https://webermanapps.github.io/video-photo-dashboard-70m4sfrw/videos/v3/SmartKeep_V3_16x9.mp4",
-    "description": "45s: problem, real app with Your Price count-up (Essentials $99, Plus $164, Complete $312), $99/Month membership close. 30s cut also available.",
-    "thumbnail": "img/smartkeep-v3-keyframe.png"
+    "description": "45s, the current landing video",
+    "thumbnail": "img/smartkeep-v3.2-keyframe.png"
   },
   {
-    "title": "SmartKeep V.2",
+    "title": "SmartKeep V3.1",
+    "date": "2026-10-13",
+    "type": "video",
+    "link": "https://webermanapps.github.io/video-photo-dashboard-70m4sfrw/videos/v3/SmartKeep_V3_9x16.mp4",
+    "link_16x9": "https://webermanapps.github.io/video-photo-dashboard-70m4sfrw/videos/v3/SmartKeep_V3_16x9.mp4",
+    "description": "30s",
+    "thumbnail": "img/smartkeep-v3.2-keyframe.png"
+  },
+  {
+    "title": "SmartKeep V.2 Explainer",
     "date": "2026-10-13",
     "type": "video",
     "link": "https://webermanapps.github.io/smartkeep-explainer/v2/",
     "thumbnail": "img/smartkeep-v2-keyframe.png"
   },
   {
-    "title": "SmartKeep V.1",
+    "title": "SmartKeep V.1 Explainer",
     "date": "2026-10-12",
     "type": "video",
     "link": "https://webermanapps.github.io/smartkeep-explainer/",
