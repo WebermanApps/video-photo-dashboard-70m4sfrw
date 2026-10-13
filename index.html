@@ -38,10 +38,9 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 .report .lbl{font:600 12px var(--mw-font-body);text-transform:uppercase;letter-spacing:var(--mw-tracking-label);color:var(--mw-primary)}
 .report ul{margin:6px 0 0;padding-left:18px}.report p{margin:6px 0 0}
 .btn{min-height:44px}
-@media(min-width:1800px){.wrap{max-width:1600px}.grid{grid-template-columns:repeat(3,1fr)}}
-@media(min-width:1800px) and (max-width:2999px){body{zoom:1.35}.wrap{max-width:1320px}}
+@media(min-width:1600px) and (max-width:2999px){body{zoom:1.35}.wrap{max-width:1360px}}
+@media(min-width:2300px) and (max-width:2999px){body{zoom:1.75}}
 @media(min-width:3000px){body{zoom:2.9}.wrap{max-width:1240px;padding:24px 28px 40px}}
-@media(min-width:1800px){.feature{display:grid;grid-template-columns:1.4fr 1fr}.feature img{border-bottom:0;border-right:1px solid var(--mw-border);height:100%}}
 .rp{position:relative;margin:14px 0 0;max-width:560px}
 .rp-lbl{display:block;font:600 12px var(--mw-font-body);text-transform:uppercase;letter-spacing:var(--mw-tracking-label);color:var(--mw-muted-text);margin:0 0 6px}
 .rp-btn{width:100%;min-height:52px;display:flex;align-items:center;gap:12px;padding:8px 14px;border:2px solid var(--mw-primary);border-radius:.75rem;background:#fff;color:var(--mw-primary);font:600 16px var(--mw-font-body);cursor:pointer;text-align:left}
@@ -58,6 +57,10 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 .rp-tx span{font-size:13px;color:var(--mw-muted-text)}
 .rp-opt .go{color:var(--mw-muted-text)}
 .share-bottom{max-width:1120px;margin:32px auto 0;padding:0 18px;text-align:center}.report p strong{font-family:var(--mw-font-heading);font-size:17px}.report p+ul{margin-top:0}
+@media(min-width:1100px){.wrap{max-width:1360px}.board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px;align-items:start}
+.board .cw{grid-column:1/3;grid-row:1/3}.board .dec{grid-column:3;grid-row:1}.board .rw{grid-column:3;grid-row:2}.board section{margin-top:30px}
+.board .grid{grid-template-columns:1fr 1fr}.cw .feature{margin:0!important;display:flex;flex-direction:column}
+.card p,ul.list li,.report li,.report p{font-size:16px}footer{padding-left:5vw;padding-right:5vw}}
 .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#fff;color:var(--mw-primary);border:1px solid var(--mw-border);box-shadow:0 4px 14px rgba(10,10,10,.12);padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s}.toast.on{opacity:1}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><defs>
@@ -86,25 +89,27 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 <p class="lead muted">Larger Video And Photo Pieces, Like 45-Second Explainers, Edits And Photo Enhancement.</p>
 <div class="status"><span class="pill"><span class="dot"></span>Active</span><span class="pill"><span class="dot o"></span>1 Decision Owed</span><span class="pill"><span class="dot o"></span>1 Paused</span><span class="pill">Updated Oct 13, 2026</span></div>
 
-<section><h2>Decisions Max Owes</h2>
+<div class="board">
+<section class="dec"><h2>Decisions Max Owes</h2>
 <ul class="list"><li><svg><use href="#i-flag"/></svg><div><strong>SmartKeep V.2: Final OK For App Swap</strong><br><span class="muted">V.2 is live on the explainer site. Once approved, it replaces V.1 in the app.</span></div></li></ul></section>
 
-<section><h2>Current Work</h2>
-<div class="feature mw-hover" style="margin-bottom:14px"><img src="img/smartkeep-v2-keyframe.png" alt="SmartKeep V.2 Keyframe">
+<section class="cw"><h2>Current Work</h2>
+<div class="grid">
+<div class="feature mw-hover"><img src="img/smartkeep-v2-keyframe.png" alt="SmartKeep V.2 Keyframe">
 <div class="body"><h3>SmartKeep V.2 Explainer</h3><p class="muted" style="margin:2px 0 12px">Live. Awaiting Max's Final OK For The App Swap.</p>
 <div class="links"><a class="btn mw-hover" href="https://webermanapps.github.io/smartkeep-explainer/v2/" target="_blank" rel="noopener"><svg><use href="#i-link"/></svg>Open V.2</a></div></div></div>
-<div class="grid">
 <div class="card mw-hover"><div class="ic"><svg><use href="#i-video"/></svg></div><div><h3>SmartKeep V.1 Explainer</h3><p class="muted">Current Version In The App Until V.2 Is Approved.</p><a class="btn mw-hover" href="https://webermanapps.github.io/smartkeep-explainer/" target="_blank" rel="noopener"><svg><use href="#i-link"/></svg>Open V.1</a></div></div>
 <div class="card mw-hover"><div class="ic"><svg><use href="#i-photo"/></svg></div><div><h3>Shorts Photo Enhance</h3><p class="muted">Ongoing Photo Enhancement For Shorts.</p></div></div>
 <div class="card mw-hover"><div class="ic"><svg><use href="#i-pause"/></svg></div><div><h3>Sep 30 Time-Lapse Edit</h3><p class="muted">Paused. Ready To Resume When Max Asks.</p></div></div>
 </div></section>
 
-<section><h2>Recent Work</h2>
+<section class="rw"><h2>Recent Work</h2>
 <ul class="list">
 <li><svg><use href="#i-folder"/></svg><div><strong>Upkeep Video Archive Moved</strong><br><span class="muted">Old sources now live in the ops archive. All existing links still work. Oct 13.</span></div></li>
 <li><svg><use href="#i-check"/></svg><div><strong>Upkeep Video Files Consolidated</strong><br><span class="muted">V.1, V.2 and the v3 build in one home. Nothing deleted. Oct 13.</span></div></li>
 <li><svg><use href="#i-video"/></svg><div><strong>SmartKeep V.2 Published To The Explainer Site</strong><br><span class="muted">Live at the V.2 link above.</span></div></li>
 </ul></section>
+</div>
 </div>
 <div class="share-bottom"><button class="btn mw-hover share" type="button"><svg><use href="#i-share"/></svg>Share This Dashboard</button></div>
 <footer>Built By Max Weberman</footer>
