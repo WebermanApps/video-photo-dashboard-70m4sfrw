@@ -1,77 +1,130 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="robots" content="noindex">
 <title>Video And Photo Agent | Command Center</title><link rel="stylesheet" href="brand-tokens.css">
 <style>
 @font-face{font-family:Khand;src:url(fonts/Khand-Bold.ttf);font-weight:700}
 @font-face{font-family:Hind;src:url(fonts/Hind-Regular.ttf);font-weight:400}
 @font-face{font-family:Hind;src:url(fonts/Hind-SemiBold.ttf);font-weight:600}
-*{box-sizing:border-box}body{margin:0;background:var(--mw-background);color:var(--mw-foreground);font-family:var(--mw-font-body);line-height:1.5}
-.wrap{max-width:1120px;margin:0 auto;padding:20px 18px 40px}
-header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--mw-border)}
-.word{font-family:var(--mw-font-heading);font-weight:700;letter-spacing:var(--mw-tracking-label);font-size:15px}
-h1{font-family:var(--mw-font-heading);font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-.01em;margin:22px 0 6px}
-h2{font-family:var(--mw-font-heading);font-weight:700;font-size:26px;line-height:1.1;margin:0 0 12px}
-h3{font-family:var(--mw-font-heading);font-weight:700;font-size:21px;line-height:1.1;margin:0 0 4px}
-.muted{color:var(--mw-muted-text)}.lead{font-size:17px;margin:0 0 16px}
-.btn{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--mw-primary);background:transparent;color:var(--mw-primary);font:600 12px var(--mw-font-body);text-transform:uppercase;letter-spacing:var(--mw-tracking-label);padding:10px 16px;text-decoration:none;cursor:pointer;border-radius:0}
+:root{--lagoon:#05668D;--saffron:#D4A017;--jungle:#0B6E4F;--terracotta:#C1502E;--lines:#E5E0D8;--ink:#0a0a0a;--muted:#525252}
+*{box-sizing:border-box}html{overflow-x:hidden}body{margin:0;background:var(--mw-background);color:var(--mw-foreground);font-family:var(--mw-font-body);line-height:1.5;overflow-x:hidden}
+.wrap{max-width:1120px;margin:0 auto;padding:16px 16px 40px;min-width:0}
+header{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--lines)}
+.apps-home{display:inline-flex;align-items:center;gap:6px;min-height:44px;min-width:44px;padding:0 4px;color:var(--lagoon);text-decoration:none;font:600 11px var(--mw-font-body);letter-spacing:.2em;text-transform:uppercase}
+.apps-home svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+h1{font-family:var(--mw-font-heading);font-weight:700;font-size:36px;line-height:1.05;letter-spacing:-.01em;margin:18px 0 6px}
+h2{font-family:var(--mw-font-heading);font-weight:700;font-size:24px;line-height:1.1;margin:0 0 12px}
+h3{font-family:var(--mw-font-heading);font-weight:700;font-size:20px;line-height:1.15;margin:0 0 4px;word-wrap:break-word}
+.muted{color:var(--mw-muted-text)}.lead{font-size:16px;margin:0 0 14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:2px solid var(--mw-primary);background:transparent;color:var(--mw-primary);font:600 12px var(--mw-font-body);text-transform:uppercase;letter-spacing:var(--mw-tracking-label);padding:10px 14px;text-decoration:none;cursor:pointer;border-radius:0;min-height:44px}
 .btn:hover{background:var(--mw-primary);color:var(--mw-primary-foreground)}
-.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.status{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
-.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:var(--mw-tracking-label);background:var(--mw-secondary);border:1px solid var(--mw-border);border-radius:999px;padding:5px 12px}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--mw-primary)}.dot.o{background:transparent;border:2px solid var(--mw-muted-text)}
-section{margin-top:30px}
-.grid{display:grid;gap:14px;grid-template-columns:1fr}
-@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}h1{font-size:56px}.wrap{padding:28px 32px 48px}}
-.card{border:1px solid var(--mw-border);border-radius:.9rem;padding:16px;background:#fff;box-shadow:0 1px 3px rgba(10,10,10,.05);display:flex;gap:14px;align-items:flex-start}
-.ic{flex:none;width:40px;height:40px;border-radius:10px;background:var(--mw-secondary);display:grid;place-items:center}
-.ic svg{width:22px;height:22px;stroke:var(--mw-primary);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.card p{margin:2px 0 10px;font-size:15px}.card .meta{font-size:13px}
-.feature{border:1px solid var(--mw-border);border-radius:1rem;overflow:hidden;box-shadow:0 4px 18px rgba(10,10,10,.06)}
-.feature img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid var(--mw-border)}
-.feature .body{padding:16px}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+/* Status chips: pill buttons on color band (bank-096 B); text links secondary (bank-098 A) */
+.status-band{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 20px;padding:10px 12px;background:#E8F1F5;border:1px solid #05668D33;border-left:5px solid var(--lagoon);border-radius:0}
+.status{display:flex;flex-wrap:wrap;gap:8px;flex:1;min-width:0}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;background:#fff;border:1px solid var(--lines);border-radius:999px;padding:6px 12px;min-height:32px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--jungle);flex:none}.dot.o{background:transparent;border:2px solid var(--mw-muted-text)}
+.status-links{display:flex;flex-wrap:wrap;gap:14px;margin-left:auto}
+.status-links a{color:var(--lagoon);font:600 13px var(--mw-font-body);text-decoration:none;border-bottom:1px solid rgba(5,102,141,.35);min-height:44px;display:inline-flex;align-items:center}
+section{margin-top:28px;min-width:0}
+.grid{display:grid;gap:14px;grid-template-columns:1fr;min-width:0}
+@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}h1{font-size:52px}.wrap{padding:24px 28px 48px}}
+/* Color edge cards, square corners, two-up roomy (bank-001 B, bank-006 A) */
+.card{border:1px solid var(--lines);border-left:5px solid var(--lagoon);border-radius:0;padding:16px;background:#fff;display:flex;gap:14px;align-items:flex-start;min-width:0}
+.card.edge-saffron{border-left-color:var(--saffron)}.card.edge-jungle{border-left-color:var(--jungle)}.card.edge-terra{border-left-color:var(--terracotta)}
+.ic{flex:none;width:40px;height:40px;border-radius:0;background:#E8F1F5;display:grid;place-items:center}
+.ic svg{width:22px;height:22px;stroke:var(--lagoon);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card p{margin:2px 0 10px;font-size:15px}
+.feature{border:1px solid var(--lines);border-radius:0;overflow:hidden;box-shadow:0 4px 18px rgba(10,10,10,.06);min-width:0}
+.feature .body{padding:16px;min-width:0}
 .links{display:flex;flex-wrap:wrap;gap:8px}
-ul.list{list-style:none;padding:0;margin:0;border-top:1px solid var(--mw-border)}
-ul.list li{padding:12px 0;border-bottom:1px solid var(--mw-border);display:flex;gap:12px;align-items:flex-start}
-ul.list li svg{flex:none;width:18px;height:18px;margin-top:3px;stroke:var(--mw-primary);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* Team feed: inline outline card, compact, text links, rounded (bank-069 B, bank-063 A) */
+.feed{border:1px solid var(--lines);border-radius:12px;padding:12px 14px;background:#fff}
+.feed h2{margin:0 0 8px;font-size:22px}
+.feed ul.list{list-style:none;padding:0;margin:0;border-top:0}
+.feed ul.list li{padding:10px 0;border-bottom:1px solid #f0f0f0;display:flex;gap:10px;align-items:flex-start}
+.feed ul.list li:last-child{border-bottom:0}
+.feed ul.list li svg{flex:none;width:18px;height:18px;margin-top:3px;stroke:var(--lagoon);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.feed .txtlinks{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;padding-top:8px;border-top:1px solid #f0f0f0}
+.feed .txtlinks a{color:var(--lagoon);font:600 13px var(--mw-font-body);text-decoration:none;border-bottom:1px solid rgba(5,102,141,.35);min-height:44px;display:inline-flex;align-items:center}
 code{font-size:13px;background:var(--mw-secondary);padding:1px 5px;border-radius:4px;word-break:break-all}
-footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground);border-top:1px solid var(--mw-border);padding:22px 18px;text-align:center;font-size:13px;letter-spacing:var(--mw-tracking-label);text-transform:uppercase}
-.report{border:2px solid var(--mw-primary);border-radius:.9rem;background:#fff;padding:14px 16px;margin:18px 0 0}
-.report .lbl{font:600 12px var(--mw-font-body);text-transform:uppercase;letter-spacing:var(--mw-tracking-label);color:var(--mw-primary)}
-.report ul{margin:6px 0 0;padding-left:18px}.report p{margin:6px 0 0}
-.btn{min-height:44px}
+footer{margin-top:36px;background:var(--mw-secondary);color:var(--mw-foreground);border-top:1px solid var(--lines);padding:20px 16px;text-align:center;font-size:12px;letter-spacing:var(--mw-tracking-label);text-transform:uppercase}
+/* Fresh Start / report: big title no picture, fold-outs roomy, icon tiles lagoon (012/015/019) */
+.report{border:1px solid var(--lines);border-top:4px solid var(--lagoon);border-radius:12px;background:#fff;padding:16px;margin:14px 0 0;min-width:0}
+.report.evening{border-top-color:var(--saffron)}
+.report .fst{font:700 32px/1.1 var(--mw-font-heading);margin:0 0 4px}
+.report .when{font:600 12px var(--mw-font-body);text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 12px}
+.fst-tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 12px}
+.fst-tile{display:flex;flex-direction:column;gap:6px;min-height:88px;padding:12px;border:1px solid #05668D33;background:#05668D0d;border-radius:10px;color:inherit;text-decoration:none;min-width:0}
+.fst-tile svg{width:24px;height:24px;stroke:var(--lagoon);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fst-tile b{font:700 18px var(--mw-font-heading);line-height:1.15}
+.fst-tile span{font-size:13px;color:var(--muted)}
+.rg{border:1px solid var(--lines);border-radius:10px;padding:0 12px;background:#fff;margin-top:10px}
+.rg summary{min-height:48px;display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none;font:700 18px var(--mw-font-heading)}
+.rg summary::-webkit-details-marker{display:none}
+.rg summary::after{content:"";margin-left:auto;width:8px;height:8px;border-right:2px solid var(--lagoon);border-bottom:2px solid var(--lagoon);transform:rotate(45deg);flex:none}
+.rg[open] summary::after{transform:rotate(-135deg)}.rg[open]{padding-bottom:12px}
+/* Evening / report body: numbered picture rows, saffron (028/029) */
+.rows{list-style:none;margin:8px 0 0;padding:0;counter-reset:r}
+.rows li{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-top:1px solid #f0f0f0;counter-increment:r}
+.rows li:first-child{border-top:0}
+.rows .num{flex:none;width:28px;height:28px;border-radius:8px;background:#D4A01726;color:#8a6a00;font:700 15px var(--mw-font-heading);display:flex;align-items:center;justify-content:center}
+.rows .ric{flex:none;width:20px;height:20px;margin-top:4px;stroke:var(--saffron);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rows span{font-size:15px;min-width:0;word-wrap:break-word}
 @media(min-width:1600px) and (max-width:2999px){body{zoom:1.35}.wrap{max-width:1360px}}
 @media(min-width:2300px) and (max-width:2999px){body{zoom:1.75}}
 @media(min-width:3000px){body{zoom:2.9}.wrap{max-width:1240px;padding:24px 28px 40px}}
-.rp{position:relative;margin:14px 0 0;max-width:560px}
-.rp-lbl{display:block;font:600 12px var(--mw-font-body);text-transform:uppercase;letter-spacing:var(--mw-tracking-label);color:var(--mw-muted-text);margin:0 0 6px}
-.rp-btn{width:100%;min-height:52px;display:flex;align-items:center;gap:12px;padding:8px 14px;border:2px solid var(--mw-primary);border-radius:.75rem;background:#fff;color:var(--mw-primary);font:600 16px var(--mw-font-body);cursor:pointer;text-align:left}
+.rp{position:relative;margin:14px 0 0;max-width:560px;min-width:0}
+.rp-lbl{display:block;font:600 11px var(--mw-font-body);text-transform:uppercase;letter-spacing:.18em;color:var(--muted);margin:0 0 6px}
+.rp-btn{width:100%;min-height:52px;display:flex;align-items:center;gap:12px;padding:8px 14px;border:2px solid var(--mw-primary);border-radius:.75rem;background:#fff;color:var(--mw-primary);font:600 15px var(--mw-font-body);cursor:pointer;text-align:left;min-width:0}
 .rp-btn .t{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rp svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .rp-btn .chev{transition:transform var(--mw-dur) var(--mw-ease)}.rp-btn[aria-expanded=true] .chev{transform:rotate(180deg)}
-.rp-list{list-style:none;margin:6px 0 0;padding:6px;position:absolute;left:0;right:0;top:100%;z-index:20;background:#fff;border:1px solid var(--mw-border);border-radius:.75rem;box-shadow:0 12px 32px rgba(10,10,10,.14);max-height:60vh;overflow:auto}
+.rp-list{list-style:none;margin:6px 0 0;padding:6px;position:absolute;left:0;right:0;top:100%;z-index:20;background:#fff;border:1px solid var(--lines);border-radius:.75rem;box-shadow:0 12px 32px rgba(10,10,10,.14);max-height:60vh;overflow:auto}
 .rp-list[hidden]{display:none}
-.rp-opt{display:flex;align-items:center;gap:12px;min-height:56px;padding:6px 8px;border-radius:.6rem;cursor:pointer;outline:none}
+.rp-opt{display:flex;align-items:center;gap:12px;min-height:56px;padding:6px 8px;border-radius:.6rem;cursor:pointer;outline:none;min-width:0}
 .rp-opt:hover,.rp-opt.act{background:var(--mw-secondary)}
 .rp-opt:focus-visible{box-shadow:0 0 0 2px var(--mw-primary)}
-.rp-th{flex:none;width:64px;height:36px;border-radius:6px;object-fit:cover;background:var(--mw-secondary);border:1px solid var(--mw-border);display:grid;place-items:center;color:var(--mw-muted-text)}
-.rp-tx{flex:1;min-width:0}.rp-tx b{display:block;font-family:var(--mw-font-heading);font-size:19px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rp-th{flex:none;width:64px;height:36px;border-radius:6px;object-fit:cover;background:var(--mw-secondary);border:1px solid var(--lines);display:grid;place-items:center;color:var(--mw-muted-text)}
+.rp-tx{flex:1;min-width:0}.rp-tx b{display:block;font-family:var(--mw-font-heading);font-size:18px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rp-tx span{font-size:13px;color:var(--mw-muted-text)}
 .rp-opt .go{color:var(--mw-muted-text)}
-.share-bottom{max-width:1120px;margin:32px auto 0;padding:0 18px;text-align:center}.report p strong{font-family:var(--mw-font-heading);font-size:17px}.report p+ul{margin-top:0}
+.share-bottom{max-width:1120px;margin:28px auto 0;padding:0 16px;text-align:center}
 @media(min-width:1100px){.wrap{max-width:1360px}.board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px;align-items:start}
-.board .cw{grid-column:1/3;grid-row:1/3}.board .dec{grid-column:3;grid-row:1}.board .rw{grid-column:3;grid-row:1}.board section{margin-top:30px}
+.board .cw{grid-column:1/3;grid-row:1/3}.board .rw{grid-column:3;grid-row:1}.board section{margin-top:30px}
 .board .grid{grid-template-columns:1fr 1fr}.cw .feature{margin:0!important;display:flex;flex-direction:column}
-.card p,ul.list li,.report li,.report p{font-size:16px}footer{padding-left:5vw;padding-right:5vw}}
-.attn{margin:14px 0 0;max-width:560px}
-.attn-btn{width:100%;min-height:52px;display:flex;align-items:center;gap:12px;padding:8px 14px;border:2px solid #b45309;border-radius:.75rem;background:#fffbeb;color:#7c2d12;font:600 16px var(--mw-font-body);cursor:pointer;text-align:left}
-.attn-btn:focus-visible{outline:3px solid #b45309;outline-offset:2px}.attn-btn .t{flex:1}
+.card p,.feed li,.rows span{font-size:16px}footer{padding-left:5vw;padding-right:5vw}.fst-tiles{grid-template-columns:repeat(4,1fr)}}
+/* Waiting On Max: color band + tinted title box + spaced caps + side rule (037/038/039) — keep collapsed */
+.attn{margin:14px 0 0;max-width:560px;border:1px solid #D4A01755;border-radius:12px;overflow:hidden;background:#fff}
+.attn-btn{width:100%;min-height:52px;display:flex;align-items:center;gap:12px;padding:10px 14px;border:0;border-left:5px solid var(--saffron);background:#D4A0171f;color:#7a5b00;font:600 12px var(--mw-font-body);letter-spacing:.18em;text-transform:uppercase;cursor:pointer;text-align:left}
+.attn-btn:focus-visible{outline:3px solid var(--saffron);outline-offset:2px}.attn-btn .t{flex:1;min-width:0}
 .attn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
-.attn-btn .chev{transition:transform var(--mw-dur) var(--mw-ease)}.attn-btn[aria-expanded=true]{border-bottom-left-radius:0;border-bottom-right-radius:0}.attn-btn[aria-expanded=true] .chev{transform:rotate(180deg)}
-.attn-panel{border:1px solid var(--mw-border);border-top:0;border-radius:0 0 .75rem .75rem;padding:4px 14px;background:#fff}.attn-panel[hidden]{display:none}.attn-panel ul.list{border-top:0}.attn-panel li:last-child{border-bottom:0}
-.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#fff;color:var(--mw-primary);border:1px solid var(--mw-border);box-shadow:0 4px 14px rgba(10,10,10,.12);padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s}.toast.on{opacity:1}
-
-.feature .vwrap{display:flex;justify-content:center;background:var(--mw-secondary);border-bottom:1px solid var(--mw-border);padding:16px 12px}
-.feature video.portrait{display:block;width:min(100%,280px);aspect-ratio:9/16;object-fit:contain;background:#0a0a0a;border-radius:.6rem;box-shadow:0 4px 14px rgba(10,10,10,.12)}
+.attn-btn .chev{transition:transform var(--mw-dur) var(--mw-ease)}.attn-btn[aria-expanded=true] .chev{transform:rotate(180deg)}
+.attn-panel{padding:12px 14px 14px;background:#fffdf7;border-top:1px solid #D4A01733}.attn-panel[hidden]{display:none}
+.attn-item{display:flex;gap:12px;align-items:flex-start}
+.attn-item .rule{flex:none;width:4px;align-self:stretch;background:var(--saffron);border-radius:2px;min-height:40px}
+.attn-item strong{display:block;font-family:var(--mw-font-heading);font-size:20px;line-height:1.15;margin-bottom:4px}
+.toast{position:fixed;left:50%;bottom:calc(72px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#fff;color:var(--mw-primary);border:1px solid var(--lines);box-shadow:0 4px 14px rgba(10,10,10,.12);padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s;z-index:60}.toast.on{opacity:1}
+.feature .vwrap{display:flex;justify-content:center;background:var(--mw-secondary);border-bottom:1px solid var(--lines);padding:14px 10px}
+.feature video.portrait{display:block;width:min(100%,260px);max-width:100%;aspect-ratio:9/16;object-fit:contain;background:#0a0a0a;border-radius:.6rem;box-shadow:0 4px 14px rgba(10,10,10,.12)}
 .feature .body .desc{font-size:15px;margin:2px 0 12px;color:var(--mw-muted-text)}
+/* PTR fold-out numbered rows lagoon/jungle (083/090) */
+.ptr-cue{margin:28px 0 0;border:1px solid var(--lines);border-radius:12px;background:#fff;border-top:3px solid var(--jungle)}
+.ptr-cue summary{min-height:48px;display:flex;align-items:center;padding:0 14px;cursor:pointer;list-style:none;font:600 11px var(--mw-font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--jungle)}
+.ptr-cue summary::-webkit-details-marker{display:none}
+.ptr-cue ol{margin:0;padding:4px 16px 14px 40px;color:var(--ink)}.ptr-cue li{padding:4px 0}.ptr-cue li::marker{color:var(--lagoon);font-weight:700}
+/* Bottom tabs phone only, lagoon (bank-080 B) */
+.tabbar{display:none}
+@media(max-width:759px){
+  .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:2px solid var(--lagoon);padding-bottom:env(safe-area-inset-bottom)}
+  .tabbar a{flex:1;min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-decoration:none;font:600 10px var(--mw-font-body);letter-spacing:.12em;text-transform:uppercase;color:#525252;min-width:0;padding:4px}
+  .tabbar a svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .tabbar a.on{color:var(--lagoon);box-shadow:inset 0 3px 0 var(--lagoon)}
+  body{padding-bottom:calc(68px + env(safe-area-inset-bottom))}
+  .fst-tiles{grid-template-columns:1fr 1fr}
+  .report .fst{font-size:28px}
+  h1{font-size:34px}
+  .btn{padding:10px 12px;font-size:11px}
+}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><defs>
 <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></symbol>
@@ -84,27 +137,63 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
 <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
 <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5.5 3.5-5.5 3.5z"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9H4z" fill="none"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" fill="none"/><rect x="13" y="4" width="7" height="7" fill="none"/><rect x="4" y="13" width="7" height="7" fill="none"/><rect x="13" y="13" width="7" height="7" fill="none"/></symbol>
 </defs></svg>
 <div class="wrap">
-<header><a class="apps-home mw-hover" href="https://webermanapps.github.io/a-2sipntzsp385oxy3/" style="display:inline-flex;align-items:center;gap:6px;min-height:44px;min-width:44px;color:inherit;text-decoration:none;font-weight:600"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Apps Home</a><button id="share" type="button" class="btn mw-hover share"><svg><use href="#i-share"/></svg>Share</button></header>
-<div class="report" id="report" aria-live="polite"><div class="lbl">SmartKeep V3 · Oct 13, 9:05 PM</div>
-<p><strong>Official SmartKeep V3 Approved</strong></p><ul><li>SmartKeep V3 (45s, formerly V3.4): characters, slower quote flow, logo. Official cut — play below or open from Recent Projects.</li><li>Draft cuts V3.1 / V3.2 removed from this dashboard. Only the official V3 files remain under videos/v3/.</li><li>Shorts photo enhancement, ready for any photo you send.</li></ul>
+<header>
+<a class="apps-home mw-hover" href="https://webermanapps.github.io/a-2sipntzsp385oxy3/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Apps Home</a>
+<button id="share" type="button" class="btn mw-hover share"><svg><use href="#i-share"/></svg>Share</button>
+</header>
+
+<section class="report evening" id="report" aria-live="polite">
+<h2 class="fst">SmartKeep V3</h2>
+<p class="when">Evening Report · Oct 13, 2026, 11:13 PM ICT</p>
+<div class="fst-tiles">
+<a class="fst-tile mw-hover" href="#smartkeep-v3"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg><b>Play V3</b><span>Official 45s cut</span></a>
+<a class="fst-tile mw-hover" href="videos/v3/SmartKeep_V3.4_9x16.mp4" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#i-video"/></svg><b>9:16</b><span>Phone cut</span></a>
+<a class="fst-tile mw-hover" href="videos/v3/SmartKeep_V3.4_16x9.mp4" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#i-video"/></svg><b>16:9</b><span>Wide cut</span></a>
+<a class="fst-tile mw-hover" href="#rp"><svg viewBox="0 0 24 24"><use href="#i-folder"/></svg><b>Projects</b><span>Recent dropdown</span></a>
 </div>
+<details class="rg mw-hover" open>
+<summary>What Shipped</summary>
+<ol class="rows">
+<li><span class="num">1</span><svg class="ric" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>SmartKeep V3 (45s, formerly V3.4): characters, slower quote flow, logo. Official cut — play below or open from Recent Projects.</span></li>
+<li><span class="num">2</span><svg class="ric" viewBox="0 0 24 24"><use href="#i-folder"/></svg><span>Draft cuts V3.1 / V3.2 removed from this dashboard. Only the official V3 files remain under videos/v3/.</span></li>
+<li><span class="num">3</span><svg class="ric" viewBox="0 0 24 24"><use href="#i-photo"/></svg><span>Shorts photo enhancement, ready for any photo you send.</span></li>
+</ol>
+</details>
+<details class="rg mw-hover">
+<summary>Still Open</summary>
+<ol class="rows">
+<li><span class="num">1</span><svg class="ric" viewBox="0 0 24 24"><use href="#i-flag"/></svg><span>SmartKeep V.2: Final OK for the app swap (customer-facing).</span></li>
+<li><span class="num">2</span><svg class="ric" viewBox="0 0 24 24"><use href="#i-pause"/></svg><span>Sep 30 time-lapse edit paused until Max asks.</span></li>
+</ol>
+</details>
+</section>
+
 <div class="attn" id="attn"><button type="button" class="attn-btn mw-hover" id="attn-btn" aria-expanded="false" aria-controls="attn-panel"><svg><use href="#i-flag"/></svg><span class="t">1 Decision Waiting</span><svg class="chev"><use href="#i-chev"/></svg></button>
-<div class="attn-panel" id="attn-panel" hidden><ul class="list"><li><svg><use href="#i-flag"/></svg><div><strong>SmartKeep V.2: Final OK For App Swap</strong><br><span class="muted">V.2 is live on the explainer site. Once Max approves, it replaces V.1 in the app. Customer-facing, so any change needs his OK.</span></div></li></ul></div></div>
+<div class="attn-panel" id="attn-panel" hidden>
+<div class="attn-item"><span class="rule" aria-hidden="true"></span><div><strong>SmartKeep V.2: Final OK For App Swap</strong><span class="muted">V.2 is live on the explainer site. Once Max approves, it replaces V.1 in the app. Customer-facing, so any change needs his OK.</span></div></div>
+</div></div>
+
 <div class="rp" id="rp"><span class="rp-lbl" id="rp-lbl">Recent Projects</span>
 <button class="rp-btn mw-hover" id="rp-btn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="rp-lbl rp-btn"><svg><use href="#i-play"/></svg><span class="t">Choose A Project To Open</span><svg class="chev"><use href="#i-chev"/></svg></button>
 <ul class="rp-list" id="rp-list" role="listbox" aria-labelledby="rp-lbl" hidden></ul></div>
+
 <h1>Video And Photo Agent</h1>
 <p class="lead muted">Larger Video And Photo Pieces, Like 45-Second Explainers, Edits And Photo Enhancement.</p>
+<div class="status-band">
 <div class="status"><span class="pill"><span class="dot"></span>Active</span><span class="pill"><span class="dot o"></span>1 Decision Waiting</span><span class="pill"><span class="dot o"></span>1 Paused</span><span class="pill">Updated Oct 13, 2026</span></div>
+<div class="status-links"><a class="mw-hover" href="#attn">Decisions</a><a class="mw-hover" href="#smartkeep-v3">Current Work</a></div>
+</div>
 
 <div class="board">
 
 <section class="cw" id="smartkeep-v3"><h2>Current Work</h2>
 <div class="grid">
 <div class="feature mw-hover">
-<div class="vwrap"><video class="portrait" controls playsinline preload="metadata" poster="img/smartkeep-v3.4-poster-9x16.png" aria-label="SmartKeep V3 9:16">
+<div class="vwrap"><video class="portrait" controls playsinline preload="none" poster="img/smartkeep-v3.4-poster-9x16.png" aria-label="SmartKeep V3 9:16">
 <source src="videos/v3/SmartKeep_V3.4_9x16.mp4" type="video/mp4">
 </video></div>
 <div class="body"><h3>SmartKeep V3</h3><p class="desc">Official 45s: characters, slower quote flow, logo.</p>
@@ -112,24 +201,45 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 <a class="btn mw-hover" href="videos/v3/SmartKeep_V3.4_9x16.mp4" target="_blank" rel="noopener"><svg><use href="#i-video"/></svg>9:16</a>
 <a class="btn mw-hover" href="videos/v3/SmartKeep_V3.4_16x9.mp4" target="_blank" rel="noopener"><svg><use href="#i-video"/></svg>16:9</a>
 </div></div></div>
-<div class="card mw-hover"><div class="ic"><svg><use href="#i-video"/></svg></div><div><h3>SmartKeep V.2 Explainer</h3><p class="muted">Live on the explainer site. Awaiting Max's Final OK For The App Swap.</p><a class="btn mw-hover" href="https://webermanapps.github.io/smartkeep-explainer/v2/" target="_blank" rel="noopener"><svg><use href="#i-link"/></svg>Open V.2</a></div></div>
+<div class="card mw-hover edge-saffron"><div class="ic"><svg><use href="#i-video"/></svg></div><div><h3>SmartKeep V.2 Explainer</h3><p class="muted">Live on the explainer site. Awaiting Max's Final OK For The App Swap.</p><a class="btn mw-hover" href="https://webermanapps.github.io/smartkeep-explainer/v2/" target="_blank" rel="noopener"><svg><use href="#i-link"/></svg>Open V.2</a></div></div>
 <div class="card mw-hover"><div class="ic"><svg><use href="#i-video"/></svg></div><div><h3>SmartKeep V.1 Explainer</h3><p class="muted">Current Version In The App Until V.2 Is Approved.</p><a class="btn mw-hover" href="https://webermanapps.github.io/smartkeep-explainer/" target="_blank" rel="noopener"><svg><use href="#i-link"/></svg>Open V.1</a></div></div>
-<div class="card mw-hover"><div class="ic"><svg><use href="#i-photo"/></svg></div><div><h3>Shorts Photo Enhance</h3><p class="muted">Ongoing Photo Enhancement For Shorts.</p></div></div>
-<div class="card mw-hover"><div class="ic"><svg><use href="#i-pause"/></svg></div><div><h3>Sep 30 Time-Lapse Edit</h3><p class="muted">Paused. Ready To Resume When Max Asks.</p></div></div>
+<div class="card mw-hover edge-jungle"><div class="ic"><svg><use href="#i-photo"/></svg></div><div><h3>Shorts Photo Enhance</h3><p class="muted">Ongoing Photo Enhancement For Shorts.</p></div></div>
+<div class="card mw-hover edge-terra"><div class="ic"><svg><use href="#i-pause"/></svg></div><div><h3>Sep 30 Time-Lapse Edit</h3><p class="muted">Paused. Ready To Resume When Max Asks.</p></div></div>
 </div></section>
 
-<section class="rw"><h2>Recent Work</h2>
+<section class="rw"><div class="feed">
+<h2>Recent Work</h2>
 <ul class="list">
 <li><svg><use href="#i-check"/></svg><div><strong>SmartKeep V3 Official — Drafts Removed</strong><br><span class="muted">V3.4 approved as official SmartKeep V3. Draft V3.1 / V3.2 mp4s deleted from this dashboard. Oct 13.</span></div></li>
 <li><svg><use href="#i-video"/></svg><div><strong>SmartKeep V3.4 Published</strong><br><span class="muted">45s with characters, slower quote flow, logo. Now the official V3. Oct 13.</span></div></li>
 <li><svg><use href="#i-folder"/></svg><div><strong>Upkeep Video Archive Moved</strong><br><span class="muted">Old sources now live in the ops archive. All existing links still work. Oct 13.</span></div></li>
 <li><svg><use href="#i-check"/></svg><div><strong>Upkeep Video Files Consolidated</strong><br><span class="muted">V.1, V.2 and the v3 build in one home. Nothing deleted. Oct 13.</span></div></li>
 <li><svg><use href="#i-video"/></svg><div><strong>SmartKeep V.2 Published To The Explainer Site</strong><br><span class="muted">Live at the V.2 link above.</span></div></li>
-</ul></section>
+</ul>
+<div class="txtlinks">
+<a class="mw-hover" href="#smartkeep-v3">Open V3 Player</a>
+<a class="mw-hover" href="https://webermanapps.github.io/smartkeep-explainer/v2/" target="_blank" rel="noopener">Open V.2 Explainer</a>
+<a class="mw-hover" href="#rp">Recent Projects</a>
 </div>
+</div></section>
+</div>
+
+<details class="ptr-cue"><summary>Pull To Refresh</summary>
+<ol>
+<li>Scroll to the very top of the page.</li>
+<li>Pull down until the refresh cue appears.</li>
+<li>Let go and the page reloads with the latest dashboard.</li>
+</ol>
+</details>
 </div>
 <div class="share-bottom"><button class="btn mw-hover share" type="button"><svg><use href="#i-share"/></svg>Share This Dashboard</button></div>
 <footer>Built By Max Weberman</footer>
+<nav class="tabbar" aria-label="Dashboard tabs">
+<a href="https://webermanapps.github.io/a-2sipntzsp385oxy3/"><svg viewBox="0 0 24 24"><use href="#i-home"/></svg>Apps Home</a>
+<a href="./" class="on" aria-current="page"><svg viewBox="0 0 24 24"><use href="#i-grid"/></svg>Command</a>
+<a href="#smartkeep-v3"><svg viewBox="0 0 24 24"><use href="#i-video"/></svg>V3</a>
+<a href="#rp"><svg viewBox="0 0 24 24"><use href="#i-folder"/></svg>Projects</a>
+</nav>
 <div class="toast" id="toast">Link Copied</div>
 <script>
 const doShare=async()=>{const d={title:document.title,url:location.href};
@@ -156,5 +266,5 @@ else if(k==='Home'){e.preventDefault();setAct(0)}else if(k==='End'){e.preventDef
 else if(k==='Enter'||k===' '){e.preventDefault();opts[idx].click()}else if(k==='Escape'||k==='Tab'){close(k==='Escape')}};
 document.addEventListener('click',e=>{if(!document.getElementById('rp').contains(e.target))close()});
 fetch('projects.json',{cache:'no-store'}).then(r=>r.json()).then(render).catch(()=>{btn.querySelector('.t').textContent='Projects Unavailable, Reload To Retry';btn.disabled=true});})();
-</script><script src="ptr.js?v=3" defer></script>
+</script><script src="ptr.js?v=4" defer></script>
 </body></html>
