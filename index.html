@@ -56,7 +56,8 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 .rp-tx{flex:1;min-width:0}.rp-tx b{display:block;font-family:var(--mw-font-heading);font-size:19px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rp-tx span{font-size:13px;color:var(--mw-muted-text)}
 .rp-opt .go{color:var(--mw-muted-text)}
-.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--mw-primary);color:#fff;padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s}.toast.on{opacity:1}
+.share-bottom{max-width:1120px;margin:32px auto 0;padding:0 18px;text-align:center}.report p strong{font-family:var(--mw-font-heading);font-size:17px}.report p+ul{margin-top:0}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#fff;color:var(--mw-primary);border:1px solid var(--mw-border);box-shadow:0 4px 14px rgba(10,10,10,.12);padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s}.toast.on{opacity:1}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><defs>
 <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></symbol>
@@ -71,10 +72,12 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5.5 3.5-5.5 3.5z"/></symbol>
 </defs></svg>
 <div class="wrap">
-<header><span class="word">MAX WEBERMAN</span><button class="btn mw-hover" id="share"><svg><use href="#i-share"/></svg>Share</button></header>
-<div class="report" id="report" aria-live="polite"><div class="lbl">Evening Report · Oct 13</div>
-<ul><li>SmartKeep V.2 updated and published; byline removed.</li><li>Upkeep video files consolidated and archived (nothing deleted).</li></ul>
-<p class="muted">Tomorrow: SmartKeep V.2 app swap once Max gives the final OK.</p></div>
+<header><span class="word" style="text-transform:uppercase">Max Weberman</span><button id="share" type="button" class="btn mw-hover share"><svg><use href="#i-share"/></svg>Share</button></header>
+<div class="report" id="report" aria-live="polite"><div class="lbl">Morning Report · Oct 13</div>
+<p><strong>Waiting On Max</strong></p><ul><li>SmartKeep V.2 is live. Final OK needed for the app swap (customer-facing, so any change needs Max's OK).</li></ul>
+<p><strong>Live</strong></p><ul><li>Recent Projects dropdown.</li></ul>
+<p><strong>In Progress</strong></p><ul><li>Shorts photo enhancement.</li></ul>
+<p><strong>Paused</strong></p><ul><li>Sep 30 time-lapse edit, until Max asks.</li></ul></div>
 <div class="rp" id="rp"><span class="rp-lbl" id="rp-lbl">Recent Projects</span>
 <button class="rp-btn mw-hover" id="rp-btn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="rp-lbl rp-btn"><svg><use href="#i-play"/></svg><span class="t">Choose A Project To Open</span><svg class="chev"><use href="#i-chev"/></svg></button>
 <ul class="rp-list" id="rp-list" role="listbox" aria-labelledby="rp-lbl" hidden></ul></div>
@@ -102,14 +105,14 @@ footer{margin-top:40px;background:var(--mw-secondary);color:var(--mw-foreground)
 <li><svg><use href="#i-video"/></svg><div><strong>SmartKeep V.2 Published To The Explainer Site</strong><br><span class="muted">Live at the V.2 link above.</span></div></li>
 </ul></section>
 </div>
+<div class="share-bottom"><button class="btn mw-hover share" type="button"><svg><use href="#i-share"/></svg>Share This Dashboard</button></div>
 <footer>Built By Max Weberman</footer>
 <div class="toast" id="toast">Link Copied</div>
 <script>
-document.getElementById('share').onclick=async()=>{const d={title:document.title,url:location.href};
-try{if(navigator.share){await navigator.share(d)}else{await navigator.clipboard.writeText(location.href);const t=document.getElementById('toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),1600)}}catch(e){}};
+const doShare=async()=>{const d={title:document.title,url:location.href};
+try{if(navigator.share){await navigator.share(d)}else{await navigator.clipboard.writeText(location.href);const t=document.getElementById('toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),1600)}}catch(e){}};document.querySelectorAll('.share').forEach(b=>b.onclick=doShare);
 </script><script>
 (function(){const btn=document.getElementById('rp-btn'),list=document.getElementById('rp-list');let opts=[],idx=0;
-const FALLBACK=[{"title":"SmartKeep V.2","date":"2026-10-13","type":"video","link":"https://webermanapps.github.io/smartkeep-explainer/v2/","thumbnail":"img/smartkeep-v2-keyframe.png"},{"title":"SmartKeep V.1","date":"2026-10-12","type":"video","link":"https://webermanapps.github.io/smartkeep-explainer/","thumbnail":""}];
 const fmt=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
 function render(items){items.sort((a,b)=>b.date.localeCompare(a.date));list.innerHTML='';
 items.forEach((p,i)=>{const li=document.createElement('li');li.className='rp-opt mw-hover';li.role='option';li.id='rp-o'+i;li.tabIndex=-1;
@@ -126,5 +129,5 @@ list.onkeydown=e=>{const k=e.key;if(k==='ArrowDown'){e.preventDefault();setAct(i
 else if(k==='Home'){e.preventDefault();setAct(0)}else if(k==='End'){e.preventDefault();setAct(-1)}
 else if(k==='Enter'||k===' '){e.preventDefault();opts[idx].click()}else if(k==='Escape'||k==='Tab'){close(k==='Escape')}};
 document.addEventListener('click',e=>{if(!document.getElementById('rp').contains(e.target))close()});
-fetch('projects.json',{cache:'no-store'}).then(r=>r.json()).then(render).catch(()=>render(FALLBACK));})();
+fetch('projects.json',{cache:'no-store'}).then(r=>r.json()).then(render).catch(()=>{btn.querySelector('.t').textContent='Projects Unavailable, Reload To Retry';btn.disabled=true});})();
 </script></body></html>
