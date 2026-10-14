@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="robots" content="noindex"><title>Video &amp; Photo Deck</title>
+<link rel="stylesheet" href="../brand-tokens.css">
+<style>
+@font-face{font-family:Khand;src:url(../fonts/Khand-Bold.ttf);font-weight:700}
+*{box-sizing:border-box}html{color-scheme:light}body{margin:0;background:#FAF3EB;color:#0A0A0A;font:16px/1.4 Hind,system-ui,sans-serif;overflow-x:hidden}
+.w{max-width:720px;margin:0 auto;padding:14px 16px 40px}
+.hd{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.hd h1{font:700 24px/1.1 Khand,sans-serif;margin:0;flex:1;min-width:0}
+.db{font-size:13px;color:#1F6F78;text-decoration:none;border:1px solid #1F6F78;border-radius:999px;padding:4px 10px;min-height:32px;display:inline-flex;align-items:center}
+.meta{color:#525252;font-size:14px;margin:6px 0 12px}
+.card{background:#fff;border:1px solid #E5E0D8;border-radius:14px;padding:16px}
+.cat{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#B5532F;font-weight:700}
+.q{font:700 20px/1.2 Khand,sans-serif;margin:6px 0 12px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{min-height:88px;border:2px solid #E5E0D8;background:#FFFDF9;border-radius:12px;padding:12px;font:600 16px Hind,sans-serif;cursor:pointer;text-align:left;color:#0A0A0A}
+.opt:hover{border-color:#1F6F78}.opt small{display:block;color:#525252;font-weight:400;font-size:12px}
+textarea{width:100%;min-height:56px;margin-top:12px;border:1px solid #E5E0D8;border-radius:10px;padding:8px;font:15px Hind,sans-serif;resize:vertical}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.btn{min-height:44px;padding:10px 18px;border-radius:10px;border:2px solid #1F6F78;background:#fff;color:#1F6F78;font:700 16px Hind,sans-serif;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.btn.pri{background:#1F6F78;color:#fff}.btn.big{width:100%;min-height:64px;font:700 24px Khand,sans-serif}
+.st{margin-top:10px;color:#B5532F;font-size:14px}
+@media(max-width:420px){.opts{grid-template-columns:1fr}}
+</style></head><body><div class="w">
+<div class="hd"><h1 id="t">Video &amp; Photo Deck</h1><a class="db" href="../#deck-launcher">Deck Building</a></div>
+<p class="meta" id="m"></p>
+<div id="app"></div>
+</div>
+<script src="https://webermanapps.github.io/style-swipe/submit.js"></script>
+<script>
+(()=>{const TOTAL=20,AG='video-photo',KD='vp-deck',KA='vp-answered',KS='vp-skipped';
+const $=s=>document.querySelector(s),app=$('#app'),ls=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch(_){return d}},put=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+let P,D;
+const split=n=>Array.from({length:n},(_,i)=>Math.floor(TOTAL/n)+(i<TOTAL%n?1:0));
+function build(cats){const ans=new Set(ls(KA,[])),sk=new Set(ls(KS,[]));const out=[];const s=split(cats.length);
+ cats.forEach((c,i)=>{const all=P.cards.filter(x=>x.cat===c);
+  const skipped=all.filter(x=>sk.has(x.id)).map(x=>({...x,reworded:true}));
+  const fresh=all.filter(x=>!ans.has(x.id)&&!sk.has(x.id));
+  const old=all.filter(x=>ans.has(x.id)).map(x=>({...x,again:true}));
+  out.push(...[...skipped,...fresh,...old].slice(0,s[i]))});
+ // top up to exactly 20 from any chosen category if one ran short
+ const used=new Set(out.map(x=>x.id));for(const x of P.cards){if(out.length>=TOTAL)break;if(cats.includes(x.cat)&&!used.has(x.id)){out.push(x);used.add(x.id)}}
+ return {id:'vp-'+Date.now(),cats,cards:out.slice(0,TOTAL),votes:[]}}
+const q=x=>x.reworded?'Second look, with fresh eyes: which fits better?':x.again?'Check again: still your pick?':'Which fits better?';
+function show(){$('#m').textContent=D.votes.length+' answered · '+D.cards.length+' left · 20-card deck · '+D.cats.map(c=>P.categories[c]).join(', ');
+ app.textContent='';const x=D.cards[0];
+ if(x){const c=document.createElement('div');c.className='card';
+  c.innerHTML='<div class="cat"></div><div class="q"></div><div class="opts"><button class="opt" data-v="a"></button><button class="opt" data-v="b"></button></div><textarea placeholder="Notes (optional)" aria-label="Notes (optional)"></textarea><div class="row"><button class="btn" data-v="skip">Skip</button></div>';
+  c.querySelector('.cat').textContent=P.categories[x.cat];c.querySelector('.q').textContent=q(x);
+  const [A,B]=c.querySelectorAll('.opt');A.textContent=x.a;B.textContent=x.b;
+  c.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{D.votes.push({id:x.id,cat:x.cat,a:x.a,b:x.b,pick:b.dataset.v,note:c.querySelector('textarea').value.trim()});D.cards.shift();put(KD,D);show()});
+  app.append(c)}else{const c=document.createElement('div');c.className='card';c.innerHTML='<div class="q">All 20 answered. Press Submit to send.</div>';app.append(c)}
+ const r=document.createElement('div');r.className='row';const s=document.createElement('button');s.className='btn pri';s.textContent='Submit'+(D.cards.length?' Now ('+D.votes.length+' of 20)':'');
+ const st=document.createElement('p');st.className='st';s.onclick=()=>submit(s,st);r.append(s);app.append(r,st)}
+async function submit(btn,st){btn.disabled=true;btn.textContent='Sending';
+ const ok=window.MWSubmit&&await MWSubmit.send({agent:AG,app:'video-photo-deck',deck:D.id,results:{categories:D.cats,votes:D.votes},notes:D.votes.filter(v=>v.note).map(v=>v.id+': '+v.note).join('\n'),partial:D.cards.length>0,answered:D.votes.length,total:TOTAL,unanswered:D.cards.map(c=>c.id)});
+ if(!ok){btn.disabled=false;btn.textContent='Submit';st.textContent=window.MWSubmit&&MWSubmit.blocked?'Password needed to send.':'Could not send. Try again.';return}
+ const ans=new Set(ls(KA,[])),sk=new Set(ls(KS,[]));D.votes.forEach(v=>{if(v.pick==='skip')sk.add(v.id);else{ans.add(v.id);sk.delete(v.id)}});put(KA,[...ans]);put(KS,[...sk]);
+ const n=D.votes.length;D=build(D.cats);put(KD,D);
+ $('#m').textContent='Sent '+n+' answers to the Video & Photo agent. A fresh 20-card deck is ready.';
+ app.innerHTML='<div class="card"><div class="q">Submitted. Thank you!</div><p>Your next deck in the same categories is waiting, answered cards removed and skipped cards reworded.</p><a class="btn big pri" href="../#deck-launcher">Back to Deck Building</a><div class="row"><button class="btn" id="nx">Open Fresh Deck</button></div></div>';
+ $('#nx').onclick=show}
+fetch('pool.json?'+Date.now()).then(r=>r.json()).then(J=>{P=J;const u=new URLSearchParams(location.search).get('cats');
+ const cats=(u?u.split(','):Object.keys(P.categories)).filter(c=>P.categories[c]);
+ D=ls(KD,null);if(!D||!D.cards||(u&&D.cats.join()!==cats.join()))D=build(cats.length?cats:Object.keys(P.categories));put(KD,D);show()})})();
+</script></body></html>

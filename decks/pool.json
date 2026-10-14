@@ -1,0 +1,300 @@
+{
+ "agent": "video-photo",
+ "total": 20,
+ "categories": {
+  "smartkeep-video": "SmartKeep Video",
+  "wellnest-photo": "WellNest Photo",
+  "video-style": "Video Style",
+  "social-clip": "Social Clip"
+ },
+ "cards": [
+  {
+   "id": "smartkeep-video-01",
+   "cat": "smartkeep-video",
+   "a": "Open on a leaking pipe close-up",
+   "b": "Open on a smiling tech at the door"
+  },
+  {
+   "id": "smartkeep-video-02",
+   "cat": "smartkeep-video",
+   "a": "Moisture scan shown as a heat map",
+   "b": "Moisture scan shown as a simple meter"
+  },
+  {
+   "id": "smartkeep-video-03",
+   "cat": "smartkeep-video",
+   "a": "Tech speaks to camera",
+   "b": "Voice-over only"
+  },
+  {
+   "id": "smartkeep-video-04",
+   "cat": "smartkeep-video",
+   "a": "License badge shown on screen 2 s",
+   "b": "License badge in the end card only"
+  },
+  {
+   "id": "smartkeep-video-05",
+   "cat": "smartkeep-video",
+   "a": "Refund promise as spoken line",
+   "b": "Refund promise as on-screen text"
+  },
+  {
+   "id": "smartkeep-video-06",
+   "cat": "smartkeep-video",
+   "a": "Price shown once at the end",
+   "b": "Price shown mid-video and at the end"
+  },
+  {
+   "id": "smartkeep-video-07",
+   "cat": "smartkeep-video",
+   "a": "Real home footage",
+   "b": "Illustrated characters"
+  },
+  {
+   "id": "smartkeep-video-08",
+   "cat": "smartkeep-video",
+   "a": "Van shot as the opener",
+   "b": "Van shot as the closer"
+  },
+  {
+   "id": "smartkeep-video-09",
+   "cat": "smartkeep-video",
+   "a": "Calm piano music",
+   "b": "Light upbeat acoustic music"
+  },
+  {
+   "id": "smartkeep-video-10",
+   "cat": "smartkeep-video",
+   "a": "45 s single cut",
+   "b": "30 s cut plus 15 s teaser"
+  },
+  {
+   "id": "smartkeep-video-11",
+   "cat": "smartkeep-video",
+   "a": "Polo in lagoon blue",
+   "b": "Polo in white with logo"
+  },
+  {
+   "id": "smartkeep-video-12",
+   "cat": "smartkeep-video",
+   "a": "End on logo and URL",
+   "b": "End on 'Book a visit' button"
+  },
+  {
+   "id": "wellnest-photo-01",
+   "cat": "wellnest-photo",
+   "a": "Warm golden-hour light",
+   "b": "Soft even daylight"
+  },
+  {
+   "id": "wellnest-photo-02",
+   "cat": "wellnest-photo",
+   "a": "Tea shot from above",
+   "b": "Tea shot at eye level"
+  },
+  {
+   "id": "wellnest-photo-03",
+   "cat": "wellnest-photo",
+   "a": "Rice-white backdrop",
+   "b": "Natural wood backdrop"
+  },
+  {
+   "id": "wellnest-photo-04",
+   "cat": "wellnest-photo",
+   "a": "People in frame",
+   "b": "Products only"
+  },
+  {
+   "id": "wellnest-photo-05",
+   "cat": "wellnest-photo",
+   "a": "Shallow depth of field",
+   "b": "Everything sharp"
+  },
+  {
+   "id": "wellnest-photo-06",
+   "cat": "wellnest-photo",
+   "a": "Light film grain",
+   "b": "Clean digital finish"
+  },
+  {
+   "id": "wellnest-photo-07",
+   "cat": "wellnest-photo",
+   "a": "Gold accent props",
+   "b": "No props, minimal"
+  },
+  {
+   "id": "wellnest-photo-08",
+   "cat": "wellnest-photo",
+   "a": "Square crop",
+   "b": "4:5 portrait crop"
+  },
+  {
+   "id": "wellnest-photo-09",
+   "cat": "wellnest-photo",
+   "a": "Lightly enhanced colours",
+   "b": "True-to-life colours"
+  },
+  {
+   "id": "wellnest-photo-10",
+   "cat": "wellnest-photo",
+   "a": "Steam visible from cup",
+   "b": "No steam, still life"
+  },
+  {
+   "id": "wellnest-photo-11",
+   "cat": "wellnest-photo",
+   "a": "Outdoor garden setting",
+   "b": "Indoor studio setting"
+  },
+  {
+   "id": "wellnest-photo-12",
+   "cat": "wellnest-photo",
+   "a": "Hands holding the cup",
+   "b": "Cup on its own"
+  },
+  {
+   "id": "video-style-01",
+   "cat": "video-style",
+   "a": "Khand headings large",
+   "b": "Khand headings medium"
+  },
+  {
+   "id": "video-style-02",
+   "cat": "video-style",
+   "a": "Cream background",
+   "b": "White background"
+  },
+  {
+   "id": "video-style-03",
+   "cat": "video-style",
+   "a": "Terracotta as the main pop",
+   "b": "Lagoon as the main pop"
+  },
+  {
+   "id": "video-style-04",
+   "cat": "video-style",
+   "a": "Fast cuts every 2 s",
+   "b": "Slower cuts every 4 s"
+  },
+  {
+   "id": "video-style-05",
+   "cat": "video-style",
+   "a": "Captions at the bottom",
+   "b": "Captions centred"
+  },
+  {
+   "id": "video-style-06",
+   "cat": "video-style",
+   "a": "Word-by-word caption reveal",
+   "b": "Full-line captions"
+  },
+  {
+   "id": "video-style-07",
+   "cat": "video-style",
+   "a": "Soft fade transitions",
+   "b": "Hard cuts"
+  },
+  {
+   "id": "video-style-08",
+   "cat": "video-style",
+   "a": "Music swells at the end",
+   "b": "Music steady throughout"
+  },
+  {
+   "id": "video-style-09",
+   "cat": "video-style",
+   "a": "Logo in the corner throughout",
+   "b": "Logo only at the end"
+  },
+  {
+   "id": "video-style-10",
+   "cat": "video-style",
+   "a": "Title Case on-screen text",
+   "b": "Sentence case on-screen text"
+  },
+  {
+   "id": "video-style-11",
+   "cat": "video-style",
+   "a": "Rounded caption boxes",
+   "b": "No caption boxes"
+  },
+  {
+   "id": "video-style-12",
+   "cat": "video-style",
+   "a": "Saffron highlight on key words",
+   "b": "Bold weight only on key words"
+  },
+  {
+   "id": "social-clip-01",
+   "cat": "social-clip",
+   "a": "15 s shorts",
+   "b": "30 s shorts"
+  },
+  {
+   "id": "social-clip-02",
+   "cat": "social-clip",
+   "a": "Hook in first 1 s",
+   "b": "Hook in first 3 s"
+  },
+  {
+   "id": "social-clip-03",
+   "cat": "social-clip",
+   "a": "Captions always on",
+   "b": "Captions only for speech"
+  },
+  {
+   "id": "social-clip-04",
+   "cat": "social-clip",
+   "a": "Face to camera",
+   "b": "B-roll with voice-over"
+  },
+  {
+   "id": "social-clip-05",
+   "cat": "social-clip",
+   "a": "Trending audio",
+   "b": "Own brand music"
+  },
+  {
+   "id": "social-clip-06",
+   "cat": "social-clip",
+   "a": "End with a question",
+   "b": "End with a call to action"
+  },
+  {
+   "id": "social-clip-07",
+   "cat": "social-clip",
+   "a": "Vertical 9:16 only",
+   "b": "9:16 plus square 1:1"
+  },
+  {
+   "id": "social-clip-08",
+   "cat": "social-clip",
+   "a": "Before-and-after format",
+   "b": "Day-in-the-life format"
+  },
+  {
+   "id": "social-clip-09",
+   "cat": "social-clip",
+   "a": "One tip per clip",
+   "b": "Three tips per clip"
+  },
+  {
+   "id": "social-clip-10",
+   "cat": "social-clip",
+   "a": "Text hook on the first frame",
+   "b": "No text on the first frame"
+  },
+  {
+   "id": "social-clip-11",
+   "cat": "social-clip",
+   "a": "Loop seamlessly",
+   "b": "Clear ending"
+  },
+  {
+   "id": "social-clip-12",
+   "cat": "social-clip",
+   "a": "Post 3 times a week",
+   "b": "Post daily"
+  }
+ ]
+}

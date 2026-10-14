@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light"><meta name="robots" content="noindex">
 <title>Video And Photo Agent | Command Center</title><link rel="stylesheet" href="brand-tokens.css">
-<link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/routines-section.css?v=1">
+<link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/routines-section.css?v=2"><link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/deck-launcher.css?v=1">
 <style>
 @font-face{font-family:Khand;src:url(fonts/Khand-Bold.ttf);font-weight:700}
 @font-face{font-family:Hind;src:url(fonts/Hind-Regular.ttf);font-weight:400}
@@ -176,6 +176,8 @@ h1{margin:12px 0 4px}.lead{margin:0 0 10px}section{margin-top:18px}
 <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" fill="none"/><rect x="13" y="4" width="7" height="7" fill="none"/><rect x="4" y="13" width="7" height="7" fill="none"/><rect x="13" y="13" width="7" height="7" fill="none"/></symbol>
 </defs></svg>
 <div class="wrap">
+<div id="deck-launcher"></div><p class="dl-now"><a href="decks/play.html">Or start a mixed 20-card deck now</a></p><style>#deck-launcher .dl-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}#deck-launcher .dl-cat span{font-size:12px}@media(max-width:600px){#deck-launcher .dl-cat span{display:none}}.dl-now{margin:-8px 0 12px;font-size:14px}.dl-now a{color:var(--lagoon,#1F6F78)}</style>
+<script>addEventListener('DOMContentLoaded',()=>fetch('launcher.json?'+Date.now()).then(r=>r.json()).then(J=>{const N={'smartkeep-video':'SmartKeep Video','wellnest-photo':'WellNest Photo','video-style':'Video Style','social-clip':'Social Clip'};let d=null;try{d=JSON.parse(localStorage.getItem('vp-deck'))}catch(_){}if(!J.ready&&d&&d.cards&&d.cards.length===20&&!d.votes.length&&localStorage.getItem('vp-answered'))J.ready={name:'Fresh Video & Photo Deck',url:'decks/play.html',total:20,categories:d.cats.map(c=>N[c]||c)};DeckLauncher.render(document.getElementById('deck-launcher'),J)}).catch(()=>{}))</script><script src="https://webermanapps.github.io/style-swipe/submit.js" defer></script><script src="https://webermanapps.github.io/style-swipe/kit/deck-launcher.js?v=1" defer></script>
 <header class="topbar">
 <a class="apps-home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Apps Home</a>
 <span class="nm">Video &amp; Photo</span><span class="upd">Updated Oct 14, 4:50 AM ICT</span>
@@ -262,7 +264,7 @@ h1{margin:12px 0 4px}.lead{margin:0 0 10px}section{margin-top:18px}
 </div></section>
 </div>
 
-<section data-routines="routines.json" id="routines"></section><script src="https://webermanapps.github.io/style-swipe/kit/routines-section.js?v=1" defer></script>
+<section data-routines="routines.json" id="routines"></section><script src="https://webermanapps.github.io/style-swipe/kit/routines-section.js?v=2" defer></script>
 <details class="ptr-cue"><summary>Pull To Refresh</summary>
 <ol>
 <li>Scroll to the very top of the page.</li>
