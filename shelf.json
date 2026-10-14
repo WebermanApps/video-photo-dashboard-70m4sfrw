@@ -1,0 +1,38 @@
+{
+ "agent": "video-photo",
+ "decks": [
+  {
+   "id": "smartkeep-video-ready-1",
+   "name": "SmartKeep Video Ready Deck 1",
+   "url": "https://webermanapps.github.io/style-swipe/smartkeep-video-ready-1-wmok27/",
+   "total": 20,
+   "topic": "smartkeep-video",
+   "blurb": "20 cards, ready now"
+  },
+  {
+   "id": "wellnest-photo-ready-1",
+   "name": "WellNest Photo Ready Deck 1",
+   "url": "https://webermanapps.github.io/style-swipe/wellnest-photo-ready-1-yow5cu/",
+   "total": 20,
+   "topic": "wellnest-photo",
+   "blurb": "20 cards, ready now"
+  },
+  {
+   "id": "video-style-ready-1",
+   "name": "Video Style Ready Deck 1",
+   "url": "https://webermanapps.github.io/style-swipe/video-style-ready-1-ynd2cw/",
+   "total": 20,
+   "topic": "video-style",
+   "blurb": "20 cards, ready now"
+  },
+  {
+   "id": "social-clips-ready-1",
+   "name": "Social Clips Ready Deck 1",
+   "url": "https://webermanapps.github.io/style-swipe/social-clips-ready-1-t97ue7/",
+   "total": 20,
+   "topic": "social-clips",
+   "blurb": "20 cards, ready now"
+  }
+ ],
+ "updated": "2026-10-14T19:35:58+07:00"
+}

@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light"><meta name="robots" content="noindex">
 <title>Video And Photo Agent | Command Center</title><link rel="stylesheet" href="brand-tokens.css">
-<link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/routines-section.css?v=2"><link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/deck-launcher.css?v=1">
+<link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/routines-section.css?v=2"><link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/deck-shelf.css?v=1">
 <style>
 @font-face{font-family:Khand;src:url(fonts/Khand-Bold.ttf);font-weight:700}
 @font-face{font-family:Hind;src:url(fonts/Hind-Regular.ttf);font-weight:400}
@@ -104,7 +104,7 @@ footer{margin-top:36px;background:var(--mw-secondary);color:var(--mw-foreground)
 .attn-item{display:flex;gap:12px;align-items:flex-start}
 .attn-item .rule{flex:none;width:4px;align-self:stretch;background:var(--saffron);border-radius:2px;min-height:40px}
 .attn-item strong{display:block;font-family:var(--mw-font-heading);font-size:20px;line-height:1.15;margin-bottom:4px}
-.toast{position:fixed;left:50%;bottom:calc(72px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#fff;color:var(--mw-primary);border:1px solid var(--lines);box-shadow:0 4px 14px rgba(10,10,10,.12);padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s;z-index:60}.toast.on{opacity:1}
+.toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#fff;color:var(--mw-primary);border:1px solid var(--lines);box-shadow:0 4px 14px rgba(10,10,10,.12);padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s;z-index:60}.toast.on{opacity:1}
 .feature .vwrap{display:flex;justify-content:center;background:var(--mw-secondary);border-bottom:1px solid var(--lines);padding:14px 10px}
 .feature video.portrait{display:block;width:min(100%,260px);max-width:100%;aspect-ratio:9/16;object-fit:contain;background:#0a0a0a;border-radius:.6rem;box-shadow:0 4px 14px rgba(10,10,10,.12)}
 .feature .body .desc{font-size:15px;margin:2px 0 12px;color:var(--mw-muted-text)}
@@ -113,14 +113,7 @@ footer{margin-top:36px;background:var(--mw-secondary);color:var(--mw-foreground)
 .ptr-cue summary{min-height:48px;display:flex;align-items:center;padding:0 14px;cursor:pointer;list-style:none;font:600 11px var(--mw-font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--jungle)}
 .ptr-cue summary::-webkit-details-marker{display:none}
 .ptr-cue ol{margin:0;padding:4px 16px 14px 40px;color:var(--ink)}.ptr-cue li{padding:4px 0}.ptr-cue li::marker{color:var(--lagoon);font-weight:700}
-/* Bottom tabs phone only, lagoon (bank-080 B) */
-.tabbar{display:none}
 @media(max-width:759px){
-  .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:2px solid var(--lagoon);padding-bottom:env(safe-area-inset-bottom)}
-  .tabbar a{flex:1;min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-decoration:none;font:600 10px var(--mw-font-body);letter-spacing:.12em;text-transform:uppercase;color:#525252;min-width:0;padding:4px}
-  .tabbar a svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-  .tabbar a.on{color:var(--lagoon);box-shadow:inset 0 3px 0 var(--lagoon)}
-  body{padding-bottom:calc(68px + env(safe-area-inset-bottom))}
   .fst-tiles{grid-template-columns:1fr 1fr}
   .report .fst{font-size:28px}
   h1{font-size:34px}
@@ -176,13 +169,12 @@ h1{margin:12px 0 4px}.lead{margin:0 0 10px}section{margin-top:18px}
 <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" fill="none"/><rect x="13" y="4" width="7" height="7" fill="none"/><rect x="4" y="13" width="7" height="7" fill="none"/><rect x="13" y="13" width="7" height="7" fill="none"/></symbol>
 </defs></svg>
 <div class="wrap">
-<div id="deck-launcher"></div><p class="dl-now"><a href="decks/play.html">Or start a mixed 20-card deck now</a></p><style>#deck-launcher .dl-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}#deck-launcher .dl-cat span{font-size:12px}@media(max-width:600px){#deck-launcher .dl-cat span{display:none}}.dl-now{margin:-8px 0 12px;font-size:14px}.dl-now a{color:var(--lagoon,#1F6F78)}</style>
-<script>addEventListener('DOMContentLoaded',()=>fetch('launcher.json?'+Date.now()).then(r=>r.json()).then(J=>{const N={'smartkeep-video':'SmartKeep Video','wellnest-photo':'WellNest Photo','video-style':'Video Style','social-clip':'Social Clip'};let d=null;try{d=JSON.parse(localStorage.getItem('vp-deck'))}catch(_){}if(!J.ready&&d&&d.cards&&d.cards.length===20&&!d.votes.length&&localStorage.getItem('vp-answered'))J.ready={name:'Fresh Video & Photo Deck',url:'decks/play.html',total:20,categories:d.cats.map(c=>N[c]||c)};DeckLauncher.render(document.getElementById('deck-launcher'),J)}).catch(()=>{}))</script><script src="https://webermanapps.github.io/style-swipe/submit.js" defer></script><script src="https://webermanapps.github.io/style-swipe/kit/deck-launcher.js?v=1" defer></script>
 <header class="topbar">
 <a class="apps-home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Apps Home</a>
 <span class="nm">Video &amp; Photo</span><span class="upd">Updated Oct 14, 4:50 AM ICT</span>
 <button id="share" type="button" class="btn mw-hover share"><svg><use href="#i-share"/></svg>Share</button>
 </header>
+<section data-shelf="shelf.json" id="deck-shelf"></section><script src="https://webermanapps.github.io/style-swipe/submit.js" defer></script><script src="https://webermanapps.github.io/style-swipe/kit/deck-shelf.js?v=1" defer></script>
 
 <h1>Video &amp; Photo</h1>
 <p class="lead muted">Larger Video And Photo Pieces, Like 45-Second Explainers, Edits And Photo Enhancement.</p>
@@ -283,14 +275,7 @@ h1{margin:12px 0 4px}.lead{margin:0 0 10px}section{margin-top:18px}
 </ol>
 </details>
 </div>
-<div class="share-bottom"><button class="btn mw-hover share" type="button"><svg><use href="#i-share"/></svg>Share This Dashboard</button></div>
 <footer>Built By Max Weberman</footer>
-<nav class="tabbar" aria-label="Dashboard tabs">
-<a href="https://webermanapps.github.io/a-o956qercs5ubd57y/"><svg viewBox="0 0 24 24"><use href="#i-home"/></svg>Apps Home</a>
-<a href="./" class="on" aria-current="page"><svg viewBox="0 0 24 24"><use href="#i-grid"/></svg>Command</a>
-<a href="#smartkeep-v5"><svg viewBox="0 0 24 24"><use href="#i-video"/></svg>V5</a>
-<a href="#rp"><svg viewBox="0 0 24 24"><use href="#i-folder"/></svg>Projects</a>
-</nav>
 <div class="toast" id="toast">Link Copied</div>
 <script>
 const doShare=async()=>{const d={title:document.title,url:location.href};
