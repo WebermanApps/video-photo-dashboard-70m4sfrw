@@ -1,4 +1,4 @@
-{"updated":"2026-10-14 14:55 ICT","routines":[
+{"updated":"2026-10-14 18:05 ICT","routines":[
  {"name":"Morning Report","group":"Daily Reports","schedule_plain":"Daily At 4:46 AM ICT (Before The 5:00 AM Deadline)","status":"on","last_run":"Today 4:50 AM"},
- {"name":"Evening Report","group":"Daily Reports","schedule_plain":"Daily At 6:00 PM ICT (Recap Plus Recent Projects)","status":"on","last_run":"Yesterday 11:13 PM"}
+ {"name":"Evening Report","group":"Daily Reports","schedule_plain":"Daily At 6:00 PM ICT (Recap Plus Recent Projects)","status":"on","last_run":"Today 6:05 PM"}
 ]}
