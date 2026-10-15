@@ -1,6 +1,7 @@
 {
   "type": "Morning",
-  "due": "05:00 ICT",
-  "posted": "2026-10-14T04:50:00+07:00",
-  "summary": "SmartKeep V3 handoff, next video looks ready \u00b7 2 open"
+  "due": "2026-10-15T05:00:00+07:00",
+  "posted": "2026-10-15T07:26:00+07:00",
+  "late": true,
+  "summary": "SmartKeep V5.1 sent, waiting on verdicts \u00b7 3 open"
 }

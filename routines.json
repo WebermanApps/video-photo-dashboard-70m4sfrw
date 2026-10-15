@@ -1,12 +1,12 @@
 {
- "updated": "2026-10-14 20:10 ICT",
+ "updated": "2026-10-15 07:26 ICT",
  "routines": [
   {
    "name": "Morning Report",
    "group": "Daily Reports",
    "schedule_plain": "Daily At 4:46 AM ICT (Before The 5:00 AM Deadline)",
    "status": "on",
-   "last_run": "Today 4:50 AM"
+   "last_run": "Today 7:26 AM (Late, Manual)"
   },
   {
    "name": "Evening Report",
