@@ -2,6 +2,107 @@
  "agent": "video-photo",
  "decks": [
   {
+   "id": "smartkeep-video-ready-1-shots-people",
+   "name": "SmartKeep Video: Text, Pace & Grade",
+   "url": "https://webermanapps.github.io/style-swipe/smartkeep-video-ready-1-shots-people-whzqst/",
+   "total": 10,
+   "topic": "smartkeep-video",
+   "tag": "SmartKeep Video",
+   "added": "2026-10-17T08:05:35+07:00",
+   "answered": 0,
+   "split_from": "smartkeep-video-ready-1",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "smartkeep-video-ready-1-text-pace-grade",
+   "name": "SmartKeep Video: Shots & People",
+   "url": "https://webermanapps.github.io/style-swipe/smartkeep-video-ready-1-text-pace-grade-ep5tub/",
+   "total": 10,
+   "topic": "smartkeep-video",
+   "tag": "SmartKeep Video",
+   "added": "2026-10-17T08:05:35+07:00",
+   "answered": 0,
+   "split_from": "smartkeep-video-ready-1",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "wellnest-photo-ready-1-subjects-setting",
+   "name": "WellNest Photo: Edit & Style",
+   "url": "https://webermanapps.github.io/style-swipe/wellnest-photo-ready-1-subjects-setting-hbcz5b/",
+   "total": 10,
+   "topic": "wellnest-photo",
+   "tag": "WellNest Photo",
+   "added": "2026-10-17T08:05:35+07:00",
+   "answered": 0,
+   "split_from": "wellnest-photo-ready-1",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "wellnest-photo-ready-1-edit-style",
+   "name": "WellNest Photo: Subjects & Setting",
+   "url": "https://webermanapps.github.io/style-swipe/wellnest-photo-ready-1-edit-style-hsl7yh/",
+   "total": 10,
+   "topic": "wellnest-photo",
+   "tag": "WellNest Photo",
+   "added": "2026-10-17T08:05:35+07:00",
+   "answered": 0,
+   "split_from": "wellnest-photo-ready-1",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "video-style-ready-1-text-graphics",
+   "name": "Video Style: Text & Graphics",
+   "url": "https://webermanapps.github.io/style-swipe/video-style-ready-1-text-graphics-1xzgnm/",
+   "total": 10,
+   "topic": "video-style",
+   "tag": "Video Style",
+   "added": "2026-10-17T08:05:35+07:00",
+   "answered": 0,
+   "split_from": "video-style-ready-1",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "video-style-ready-1-pace-sound-colour",
+   "name": "Video Style: Pace, Sound & Colour",
+   "url": "https://webermanapps.github.io/style-swipe/video-style-ready-1-pace-sound-colour-ljs0au/",
+   "total": 10,
+   "topic": "video-style",
+   "tag": "Video Style",
+   "added": "2026-10-17T08:05:35+07:00",
+   "answered": 0,
+   "split_from": "video-style-ready-1",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "social-clips-ready-1-hooks-edit",
+   "name": "Social Clips: Hooks & Edit",
+   "url": "https://webermanapps.github.io/style-swipe/social-clips-ready-1-hooks-edit-fx4puy/",
+   "total": 10,
+   "topic": "social-clips",
+   "tag": "Social Clips",
+   "added": "2026-10-17T08:05:35+07:00",
+   "answered": 0,
+   "split_from": "social-clips-ready-1",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "social-clips-ready-1-posting-community",
+   "name": "Social Clips: Posting & Community",
+   "url": "https://webermanapps.github.io/style-swipe/social-clips-ready-1-posting-community-jojf3s/",
+   "total": 10,
+   "topic": "social-clips",
+   "tag": "Social Clips",
+   "added": "2026-10-17T08:05:35+07:00",
+   "answered": 0,
+   "split_from": "social-clips-ready-1",
+   "blurb": "10 cards, ready now"
+  }
+ ],
+ "updated": "2026-10-17T08:05:35+07:00",
+ "pinned": [],
+ "done": [],
+ "unlisted": [
+  {
    "id": "smartkeep-video-ready-1",
    "name": "SmartKeep Video Deck",
    "url": "https://webermanapps.github.io/style-swipe/smartkeep-video-ready-1-wmok27/",
@@ -9,7 +110,13 @@
    "topic": "smartkeep-video",
    "blurb": "20 cards, ready now",
    "tag": "SmartKeep Video",
-   "added": "2026-10-14T19:35:58+07:00"
+   "added": "2026-10-14T19:35:58+07:00",
+   "unlisted_at": "2026-10-17T08:05:35+07:00",
+   "split_into": [
+    "smartkeep-video-ready-1-shots-people",
+    "smartkeep-video-ready-1-text-pace-grade"
+   ],
+   "note": "R86 (Max Oct 17 2026 07:50 ICT): unanswered 20-pick deck split into two 10-pick decks; original unlisted (page, file and any votes kept)"
   },
   {
    "id": "wellnest-photo-ready-1",
@@ -19,7 +126,13 @@
    "topic": "wellnest-photo",
    "blurb": "20 cards, ready now",
    "tag": "WellNest Photo",
-   "added": "2026-10-14T19:35:58+07:00"
+   "added": "2026-10-14T19:35:58+07:00",
+   "unlisted_at": "2026-10-17T08:05:35+07:00",
+   "split_into": [
+    "wellnest-photo-ready-1-subjects-setting",
+    "wellnest-photo-ready-1-edit-style"
+   ],
+   "note": "R86 (Max Oct 17 2026 07:50 ICT): unanswered 20-pick deck split into two 10-pick decks; original unlisted (page, file and any votes kept)"
   },
   {
    "id": "video-style-ready-1",
@@ -29,7 +142,13 @@
    "topic": "video-style",
    "blurb": "20 cards, ready now",
    "tag": "Video Style",
-   "added": "2026-10-14T19:35:58+07:00"
+   "added": "2026-10-14T19:35:58+07:00",
+   "unlisted_at": "2026-10-17T08:05:35+07:00",
+   "split_into": [
+    "video-style-ready-1-text-graphics",
+    "video-style-ready-1-pace-sound-colour"
+   ],
+   "note": "R86 (Max Oct 17 2026 07:50 ICT): unanswered 20-pick deck split into two 10-pick decks; original unlisted (page, file and any votes kept)"
   },
   {
    "id": "social-clips-ready-1",
@@ -39,10 +158,17 @@
    "topic": "social-clips",
    "blurb": "20 cards, ready now",
    "tag": "Social Clips",
-   "added": "2026-10-14T19:35:58+07:00"
+   "added": "2026-10-14T19:35:58+07:00",
+   "unlisted_at": "2026-10-17T08:05:35+07:00",
+   "split_into": [
+    "social-clips-ready-1-hooks-edit",
+    "social-clips-ready-1-posting-community"
+   ],
+   "note": "R86 (Max Oct 17 2026 07:50 ICT): unanswered 20-pick deck split into two 10-pick decks; original unlisted (page, file and any votes kept)"
   }
  ],
- "updated": "2026-10-14T20:10:00+07:00",
- "pinned": [],
- "done": []
+ "cap": 10,
+ "cap_note": "R86 (Max Oct 17 2026 07:50 ICT): every shelf shows up to 10 decks (pinned included), 10 picks per deck; in-progress first, done last (kit deck-shelf.js sort)",
+ "held": [],
+ "queued": []
 }
