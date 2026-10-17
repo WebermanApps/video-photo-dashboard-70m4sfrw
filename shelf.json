@@ -2,52 +2,56 @@
  "agent": "video-photo",
  "decks": [
   {
-   "id": "smartkeep-video-ready-1-shots-people",
+   "id": "smartkeep-video-ready-1-text-pace-grade-deck",
    "name": "SmartKeep Video: Text, Pace & Grade",
-   "url": "https://webermanapps.github.io/style-swipe/smartkeep-video-ready-1-shots-people-whzqst/",
+   "url": "https://webermanapps.github.io/style-swipe/smartkeep-video-ready-1-text-pace-grade-deck-5smn49/",
    "total": 10,
    "topic": "smartkeep-video",
    "tag": "SmartKeep Video",
    "added": "2026-10-17T08:05:35+07:00",
    "answered": 0,
    "split_from": "smartkeep-video-ready-1",
-   "blurb": "10 cards, ready now"
+   "blurb": "10 cards, ready now",
+   "renamed_from": "smartkeep-video-ready-1-shots-people"
   },
   {
-   "id": "smartkeep-video-ready-1-text-pace-grade",
+   "id": "smartkeep-video-ready-1-shots-people-deck",
    "name": "SmartKeep Video: Shots & People",
-   "url": "https://webermanapps.github.io/style-swipe/smartkeep-video-ready-1-text-pace-grade-ep5tub/",
+   "url": "https://webermanapps.github.io/style-swipe/smartkeep-video-ready-1-shots-people-deck-ql9dd2/",
    "total": 10,
    "topic": "smartkeep-video",
    "tag": "SmartKeep Video",
    "added": "2026-10-17T08:05:35+07:00",
    "answered": 0,
    "split_from": "smartkeep-video-ready-1",
-   "blurb": "10 cards, ready now"
+   "blurb": "10 cards, ready now",
+   "renamed_from": "smartkeep-video-ready-1-text-pace-grade"
   },
   {
-   "id": "wellnest-photo-ready-1-subjects-setting",
+   "id": "wellnest-photo-ready-1-edit-style-deck",
    "name": "WellNest Photo: Edit & Style",
-   "url": "https://webermanapps.github.io/style-swipe/wellnest-photo-ready-1-subjects-setting-hbcz5b/",
+   "url": "https://webermanapps.github.io/style-swipe/wellnest-photo-ready-1-edit-style-deck-7zi90i/",
    "total": 10,
    "topic": "wellnest-photo",
    "tag": "WellNest Photo",
    "added": "2026-10-17T08:05:35+07:00",
    "answered": 0,
    "split_from": "wellnest-photo-ready-1",
-   "blurb": "10 cards, ready now"
+   "blurb": "10 cards, ready now",
+   "renamed_from": "wellnest-photo-ready-1-subjects-setting"
   },
   {
-   "id": "wellnest-photo-ready-1-edit-style",
+   "id": "wellnest-photo-ready-1-subjects-setting-deck",
    "name": "WellNest Photo: Subjects & Setting",
-   "url": "https://webermanapps.github.io/style-swipe/wellnest-photo-ready-1-edit-style-hsl7yh/",
+   "url": "https://webermanapps.github.io/style-swipe/wellnest-photo-ready-1-subjects-setting-deck-aipx4r/",
    "total": 10,
    "topic": "wellnest-photo",
    "tag": "WellNest Photo",
    "added": "2026-10-17T08:05:35+07:00",
    "answered": 0,
    "split_from": "wellnest-photo-ready-1",
-   "blurb": "10 cards, ready now"
+   "blurb": "10 cards, ready now",
+   "renamed_from": "wellnest-photo-ready-1-edit-style"
   },
   {
    "id": "video-style-ready-1-text-graphics",
@@ -98,7 +102,7 @@
    "blurb": "10 cards, ready now"
   }
  ],
- "updated": "2026-10-17T08:05:35+07:00",
+ "updated": "2026-10-17T09:55:08+07:00",
  "pinned": [],
  "done": [],
  "unlisted": [
@@ -113,8 +117,8 @@
    "added": "2026-10-14T19:35:58+07:00",
    "unlisted_at": "2026-10-17T08:05:35+07:00",
    "split_into": [
-    "smartkeep-video-ready-1-shots-people",
-    "smartkeep-video-ready-1-text-pace-grade"
+    "smartkeep-video-ready-1-text-pace-grade-deck",
+    "smartkeep-video-ready-1-shots-people-deck"
    ],
    "note": "R86 (Max Oct 17 2026 07:50 ICT): unanswered 20-pick deck split into two 10-pick decks; original unlisted (page, file and any votes kept)"
   },
@@ -129,8 +133,8 @@
    "added": "2026-10-14T19:35:58+07:00",
    "unlisted_at": "2026-10-17T08:05:35+07:00",
    "split_into": [
-    "wellnest-photo-ready-1-subjects-setting",
-    "wellnest-photo-ready-1-edit-style"
+    "wellnest-photo-ready-1-edit-style-deck",
+    "wellnest-photo-ready-1-subjects-setting-deck"
    ],
    "note": "R86 (Max Oct 17 2026 07:50 ICT): unanswered 20-pick deck split into two 10-pick decks; original unlisted (page, file and any votes kept)"
   },
