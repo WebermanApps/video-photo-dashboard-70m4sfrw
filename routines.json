@@ -4,8 +4,8 @@
   {
    "name": "Morning Report",
    "group": "Daily Reports",
-   "schedule_plain": "Daily At 4:46 AM ICT (Before The 5:00 AM Deadline)",
-   "status": "on",
+   "schedule_plain": "Retired Oct 20 (Machan): Morning Reports Now Come From Grok Bot And Swatch",
+   "status": "paused",
    "last_run": "Today 7:26 AM (Late, Manual)"
   },
   {
